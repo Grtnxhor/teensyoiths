@@ -4,7 +4,6 @@ if (isset($_POST['update']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 
         $title      = escape(clean($_POST['title']));
         $details    = escape(clean($_POST['det']));
-        $quote      = escape(clean($_POST['cite']));
         $idn        = escape(clean($_POST['idn']));
 
 if ($_FILES["fileToUpload"]["name"] != "") {
@@ -32,7 +31,7 @@ if ($uploadOk == 0) {
     $post_url   = str_replace(' ', '-', $title); 
 
     //update details into db
-    $sql = "UPDATE article SET `title` = '$title', `pix` = '$target_file', `details` = '$details', `quote` = '$quote', `post_url` = '$post_url' WHERE `pidr` = '$idn'";
+    $sql = "UPDATE article SET `title` = '$title', `pix` = '$target_file', `details` = '$details', `post_url` = '$post_url' WHERE `id` = '$idn'";
     $res = query($sql);
 
     $_SESSION['msg'] = "  Your articles was updated successfully. ";
@@ -51,7 +50,7 @@ if ($uploadOk == 0) {
     $post_url   = str_replace(' ', '-', $title);
     
     //update details into db
-    $sl = "UPDATE article SET `title` = '$title', `details` = '$details', `quote` = '$quote', `post_url` = '$post_url' WHERE `pidr` = '$idn'";
+    $sl = "UPDATE article SET `title` = '$title', `details` = '$details', `post_url` = '$post_url' WHERE `id` = '$idn'";
     $rs = query($sl);
 
     $_SESSION['msg'] = "  Your articles was updated successfully. ";

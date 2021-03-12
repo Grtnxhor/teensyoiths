@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
+
+    <!-- summernote -->
+    <link rel="stylesheet" href="summernote/summernote-bs4.css">
+
 </head>
 
 <body>
@@ -51,38 +55,39 @@
                             <div class="classycloseIcon">
                                 <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
                             </div>
-<?php
+                            <?php
 if(!isset($_SESSION['user']) && !isset($_SESSION['Username'])) {          
 ?>
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="./">Home</a></li>                                  
+                                    <li><a href="./">Home</a></li>
                                     <li><a href="./about">About Us</a></li>
                                     <li><a href="./articles">Articles</a></li>
                                     <li><a href="./write">Write an Article</a></li>
-                                    
+
                                     <li><a href="./signin">Sign in</a></li>
                                 </ul>
 
                                 <!-- Donate Button -->
                                 <a href="./signup" class="btn crose-btn header-btn">Sign up</a>
-                               
+
                             </div>
                             <!-- Nav End -->
-                             <?php
+                            <?php
                             } else {
                             ?>
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="./">Home</a></li>                                  
+                                    <li><a href="./">Home</a></li>
                                     <li><a href="./about">About Us</a></li>
                                     <li><a href="./articles">Articles</a></li>
                                     <li><a href="./write">Write an Article</a></li>
-                                     <li><a href="./myarticles">My Articles</a></li>
+                                    <li><a href="./myarticles">My Articles</a></li>
                                     <li><a href="./logout">Logout</a></li>
-                                    <li><a style="color: red;" href="#">Welcome <?php echo $_SESSION['Username'] ?> </a></li>
+                                    <li><a style="color: red;" href="#">Welcome <?php echo $_SESSION['Username'] ?> </a>
+                                    </li>
                                 </ul>
                             </div>
                             <!-- Nav End -->
@@ -101,10 +106,12 @@ if(!isset($_SESSION['user']) && !isset($_SESSION['Username'])) {
                         <div class="col-12">
                             <div class="searchForm">
                                 <form action="#" method="post">
-                                    <input type="search" name="search" id="search" placeholder="Enter keywords &amp; hit enter...">
+                                    <input type="search" name="search" id="search"
+                                        placeholder="Enter keywords &amp; hit enter...">
                                     <button type="submit" class="d-none"></button>
                                 </form>
-                                <div class="close-icon" id="searchCloseIcon"><i class="fa fa-close" aria-hidden="true"></i></div>
+                                <div class="close-icon" id="searchCloseIcon"><i class="fa fa-close"
+                                        aria-hidden="true"></i></div>
                             </div>
                         </div>
                     </div>

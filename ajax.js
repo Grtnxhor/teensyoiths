@@ -265,4 +265,8 @@ $("#cbtn").click(function()
 
 $("#exampleModalCenter").modal();
 })
+
+
+//post article
+
 })	
