@@ -11,8 +11,8 @@ include("include/sidebar.php");
 ?>
 
 <!-- Modal -->
-    <div class="modal fade" id="ModalCenter">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            
-        </div>
-    </div> 
+<div class="modal fade" id="ModalCenter">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+
+    </div>
+</div>

@@ -260,7 +260,7 @@ function verify_user($verify, $email) {
 
 	$body = "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>TeensYouths.. Let the revolution begin</title></head><link rel='stylesheet' href='https://teensyouths.com.ng/css/bootstrap.min.css'><body style='text-align: center;'>";
 	$body .= "<section style='margin: 30px; margin-top: 50px ; background: #c92f2f; color: white;'>";
-	$body .= "<img style='margin-top: 35px' src='{$logo}' alt='DotLive'>";
+	$body .= "<img style='margin-top: 35px' src='{$logo}' alt='TeensYouths'>";
 	$body .= "<h1 style='margin-top: 45px; color: #fbb710'>Activate your email to continue</h1>
 		<br/>";
 	$body .= "<p style='margin-left: 45px; margin-top: 34px; text-align: left; font-size: 17px;'>Hi there! <br/> Thank you for signing up. Kindly click on the link below to activate your email;</p>

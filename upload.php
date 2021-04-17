@@ -4,7 +4,7 @@ if (isset($_POST['write']) && $_SERVER["REQUEST_METHOD"] == "POST") {
     
         //basic constants
         $title      = $_POST['title'];
-        $details    = $_POST['det'];
+        $details    = escape($_POST['det']);    
 
 
         //upload article picture

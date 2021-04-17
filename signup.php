@@ -44,50 +44,54 @@
                                         <div class="col-12 col-lg-4">
                                             <div class="form-group">
                                                 <label for="contact-name">Full Name*:</label>
-                                                <input id="fname" type="text" class="form-control" id="contact-name"
-                                                    placeholder="Input your full name">
+                                                <input style="color: black;" id="fname" type="text" class="form-control"
+                                                    id="contact-name" placeholder="Input your full name">
                                             </div>
                                         </div>
                                         <div class="col-12 col-lg-4">
                                             <div class="form-group">
                                                 <label for="contact-email">Email*:</label>
-                                                <input id="email" type="email" class="form-control" id="contact-email"
+                                                <input style="color: black;" id="email" type="email"
+                                                    class="form-control" id="contact-email"
                                                     placeholder="input your email address">
                                             </div>
                                         </div>
                                         <div class="col-12 col-lg-4">
                                             <div class="form-group">
                                                 <label for="contact-number">Username*:</label>
-                                                <input id="usname" type="text" class="form-control" id="contact-number"
+                                                <input style="color: black;" id="usname" type="text"
+                                                    class="form-control" id="contact-number"
                                                     placeholder="Create a username">
                                             </div>
                                         </div>
                                         <div class="col-12 col-lg-4">
                                             <div class="form-group">
                                                 <label for="contact-number">Password*:</label>
-                                                <input id="pword" type="password" class="form-control"
-                                                    id="contact-number" placeholder="Create a Password">
+                                                <input style="color: black;" id="pword" type="password"
+                                                    class="form-control" id="contact-number"
+                                                    placeholder="Create a Password">
                                             </div>
                                         </div>
                                         <div class="col-12 col-lg-4">
                                             <div class="form-group">
                                                 <label for="contact-number">Confirm Password*:</label>
-                                                <input id="cpword" type="password" class="form-control"
-                                                    id="contact-number" placeholder="Retype the Password here">
+                                                <input style="color: black;" id="cpword" type="password"
+                                                    class="form-control" id="contact-number"
+                                                    placeholder="Retype the Password here">
                                             </div>
                                         </div>
                                         <div class="col-12 col-lg-4">
                                             <div class="form-group">
                                                 <label for="contact-number">Phone*:</label>
-                                                <input id="tel" type="number" class="form-control" id="contact-number"
-                                                    placeholder="Input your telephone number">
+                                                <input style="color: black;" id="tel" type="number" class="form-control"
+                                                    id="contact-number" placeholder="Input your telephone number">
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label for="message">About you*:</label>
-                                                <textarea id="msgr" class="form-control" name="message" id="message"
-                                                    cols="30" rows="10"
+                                                <textarea style="color: black;" id="msgr" class="form-control"
+                                                    name="message" id="message" cols="30" rows="10"
                                                     placeholder="Let`s get to know you better"></textarea>
                                             </div>
                                             <a href="./signin" style="color: red; text-decoration: none;">Have a space?
