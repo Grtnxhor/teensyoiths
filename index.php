@@ -132,7 +132,7 @@
         <div class="row justify-content-center">
 
             <?php
-                $sql = "SELECT * FROM article ORDER BY view desc";
+                $sql = "SELECT * FROM article ORDER BY view desc LIMIT 6";
                 $res = query($sql);
                 if (row_count($res) == "") {
                     echo 'No uploaded articles yet';
