@@ -14,7 +14,7 @@ $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
 // Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "jpeg") {
+if($imageFileType != "jpg" && $imageFileType != "jpeg" && $imageFileType != "png") {
     echo validation_errors("Sorry, only JPG & JPEG files are allowed.");
     $uploadOk = 0;
 } else {

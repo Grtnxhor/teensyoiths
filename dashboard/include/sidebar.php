@@ -82,12 +82,12 @@
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                        <li class="nav-item has-treeview menu-open">
+                        <li class="nav-item has-treeview">
                             <a href="./" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
-                                    <i class="right fas fa-angle-down"></i>
+                                    <i class="right fas fa-angle-right"></i>
                                 </p>
                             </a>
 
@@ -125,6 +125,26 @@
                                     </a>
                                 </li>
                             </ul>
+                        </li>
+                        <br />
+                        <li class="nav-item has-treeview">
+                            <a href="./mail" class="nav-link">
+                                <i class="nav-icon fas fa-envelope"></i>
+                                <p>
+                                    Send Mail
+                                    <i class="fas fa-angle-right right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <br />
+                        <li class="nav-item has-treeview">
+                            <a href="./scheduler" class="nav-link">
+                                <i class="nav-icon fas fa-clock"></i>
+                                <p>
+                                    Scheduler
+                                    <i class="fas fa-angle-right right"></i>
+                                </p>
+                            </a>
                         </li>
                         <br />
                         <li class="nav-item has-treeview">

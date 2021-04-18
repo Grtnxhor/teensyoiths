@@ -119,8 +119,11 @@ $tot = date("M t, Y", strtotime($a_date));
                             <p>Article.: <b><?php echo $row['title'] ?></b><br />
                                 Monthly View.: <b><?php echo $row['view'] ?></b><br />
                                 Annual View..: <b><?php echo $row['totview'] ?></b><br />
-                                Author..: <b><?php echo $row['author'] ?></b><br />
-                                Author Email.: <b><?php echo $row['author_mail'] ?></b><br>
+                                Author..: <b><?php echo $row['author'] ?></b><br /><br />
+
+                                <a target="_blank" href="https://teensyouths.com.ng/<?php echo $row['post_url'] ?>"
+                                    style="color: red;">More
+                                    Details</a>
                             </p>
                         </div>
                         <?php
@@ -154,8 +157,12 @@ $tot = date("M t, Y", strtotime($a_date));
                             <p>Article.: <b><?php echo $row['title'] ?></b><br />
                                 Monthly View.: <b><?php echo $row['view'] ?></b><br />
                                 Annual View..: <b><?php echo $row['totview'] ?></b><br />
-                                Author..: <b><?php echo $row['author'] ?></b><br />
-                                Author Email.: <b><?php echo $row['author_mail'] ?></b><br>
+                                Author..: <b><?php echo $row['author'] ?></b><br /><br />
+
+                                <a target="_blank" href="https://teensyouths.com.ng/<?php echo $row['post_url'] ?>"
+                                    style="color: red;">More
+                                    Details</a>
+
                             </p>
                         </div>
                         <?php
