@@ -137,15 +137,7 @@
                             </a>
                         </li>
                         <br />
-                        <li class="nav-item has-treeview">
-                            <a href="./scheduler" class="nav-link">
-                                <i class="nav-icon fas fa-clock"></i>
-                                <p>
-                                    Scheduler
-                                    <i class="fas fa-angle-right right"></i>
-                                </p>
-                            </a>
-                        </li>
+
                         <br />
                         <li class="nav-item has-treeview">
                             <a href="./logout" class="nav-link">
