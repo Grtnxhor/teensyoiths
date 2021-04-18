@@ -22,7 +22,7 @@
     <div class="container">
         <div class="row justify-content-between">
             <!-- Blog Post Area -->
-            <div class="col-12 col-lg-8">
+            <div class="col-12 col-lg-12">
                 <div class="row">
                     <?php
                 $sql = "SELECT * FROM article ORDER BY RAND()";
@@ -69,43 +69,7 @@
 
             </div>
 
-            <!-- Sidebar Area -->
-            <div class="col-12 col-lg-3">
-                <div class="post-sidebar-area">
 
-
-                    <!-- ##### Single Widget Area ##### -->
-                    <div class="single-widget-area">
-                        <!-- Title -->
-                        <div class="widget-title">
-                            <h6>Recent Articles</h6>
-                        </div>
-                        <?php
-                $sql = "SELECT * FROM article ORDER BY RAND()";
-                $res = query($sql);
-                if (row_count($res) == "") {
-                    echo 'No uploaded articles yet';
-                } else {
-                while($row = mysqli_fetch_array($res)) {
-                ?>
-                        <!-- Single Latest Posts -->
-                        <div class="single-latest-post">
-                            <a style="text-decoration: none;" href="./<?php echo $row['post_url']; ?>"
-                                class="post-title">
-                                <h6><?php echo $row['title']; ?></h6>
-                            </a>
-                            <p class="post-date"><?php echo date('D, M d, Y', strtotime($row['datepost'])) ?></p>
-                        </div>
-                        <?php 
-                        }
-                    }
-                             ?>
-                    </div>
-
-
-
-                </div>
-            </div>
         </div>
     </div>
 </div>
