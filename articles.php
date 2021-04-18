@@ -37,7 +37,7 @@
                     $y = substr($det,0,strpos($det,' ',600)) . " ...";
                 ?>
                     <!-- Single Blog Post Area -->
-                    <div class="col-12 col-md-12">
+                    <div class="col-12 col-md-6">
                         <div class="single-blog-post mb-50">
                             <div class="post-thumbnail">
                                 <a href="#"><img style="width: 100%; height: 250px;" src="<?php echo $row['pix']; ?>"
