@@ -139,9 +139,11 @@
                 } else {
                 while($row = mysqli_fetch_array($res)) {
                     $det = $row['details'];
-                    $z = str_word_count($det);
+                    /*$z = str_word_count($det);
                     $w = "...";
-                    $y = substr_replace($det, $w, $z);
+                    $y = substr_replace($det, $w, $z);*/
+                    
+                    $y = substr($det,0,strpos($det,' ',600)) . " ...";
                 ?>
             <!-- Single Blog Post Area -->
             <div class="col-12 col-md-6 col-lg-4">
@@ -161,7 +163,9 @@
                                 <?php echo $row['view']; ?></a>
                         </div>
                         <p class="post-excerpt"><?php echo $y; ?></p>
-                        <a style="text-decoration: none;" href="<?php echo $row['post_url']; ?>">Read More</a>
+
+                        <a href="<?php echo $row['post_url']; ?>" class="btn crose-btn btn-2">Read More</a>
+
                     </div>
                 </div>
             </div>
@@ -201,16 +205,18 @@
                 <div class="col-12">
                     <div class="upcoming-slides owl-carousel">
                         <?php
-                $sql2 = "SELECT * FROM article ORDER BY id asc";
+                $sql2 = "SELECT * FROM article ORDER BY id asc LIMIT 4";
                 $res2 = query($sql2);
                 if (row_count($res2) == "") {
                     echo 'No uploaded articles yet';
                 } else {
                 while($row2 = mysqli_fetch_array($res2)) {
                     $det = $row2['details'];
-                    $z = str_word_count($det);
-                    $w = "...";
-                    $y = substr_replace($det, $w, $z);
+                   /**$z = str_word_count($det);
+                   $w = "...";
+                   $y = substr_replace($det, $w, $z);**/
+
+                   $y = substr($det,0,strpos($det,' ',600)) . " ...";
                     ?>
                         <div class="single-slide">
                             <!-- Single Upcoming Events Area -->

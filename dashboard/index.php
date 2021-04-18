@@ -40,7 +40,7 @@ $tot = date("M t, Y", strtotime($a_date));
                             <?php
                  
  $sql="SELECT SUM(sn) AS total from user";
- $result_set=query($sql);
+ $result_set = query($sql);
  $row= mysqli_fetch_array($result_set);
  
          ?>

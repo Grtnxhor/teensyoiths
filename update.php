@@ -3,7 +3,7 @@ include("functions/init.php");
 if (isset($_POST['update']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 
         $title      = escape(clean($_POST['title']));
-        $details    = escape(clean($_POST['det']));
+        $details    = escape($_POST['det']);
         $idn        = escape(clean($_POST['idn']));
 
 if ($_FILES["fileToUpload"]["name"] != "") {

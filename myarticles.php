@@ -50,7 +50,7 @@ if (!isset($_SESSION['Username']) || !isset($_SESSION['user'])) {
 
             <?php
                 $r = $_SESSION['Username'];
-                $sql = "SELECT * FROM article WHERE `author` = '$r' ORDER BY id asc ";
+                $sql = "SELECT * FROM article WHERE `author` = '$r' ORDER BY id desc ";
                 $res = query($sql);
                 if (row_count($res) == "") {
                     
@@ -78,9 +78,9 @@ if (!isset($_SESSION['Username']) || !isset($_SESSION['user'])) {
                 } else {
                 while($row = mysqli_fetch_array($res)) {
                     $det = $row['details'];
-                    $z = str_word_count($det);
-                    $w = "...";
-                    $y = substr_replace($det, $w, $z);
+                    /*$z = str_word_count($det);
+                    $w = "...";*/
+                    $y = substr($det,0,strpos($det,' ',600)) . " ...";
                 ?>
 
             <div class="col-12">
