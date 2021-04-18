@@ -236,7 +236,7 @@
                                             <a style="text-decoration: none" href="#"><i class="fa fa-eye"
                                                     aria-hidden="true"></i> <?php echo $row2['view']; ?></a>
                                         </div>
-                                        <p><?php echo $y; ?></p>
+                                        <p><?php echo htmlspecialchars($y); ?></p>
                                     </div>
                                     <div class="find-out-more-btn">
                                         <a href="<?php echo $row2['post_url']; ?>" class="btn crose-btn btn-2">Find Out
