@@ -39,7 +39,7 @@ include("functions/top.php"); ?>
                       <!-- text input -->
                       <div class="form-group">
                         <label>Article Title</label>
-                        <input type="text" class="form-control" placeholder="Enter ...">
+                        <input type="text" id="ptit" class="form-control" placeholder="Enter your article title">
                       </div>
                     </div>
                    
@@ -48,15 +48,15 @@ include("functions/top.php"); ?>
                     <div class="col-sm-12">
                       <!-- textarea -->
                       <div class="form-group">
-                        <label>Textarea</label>
-                         <textarea class="textarea" placeholder="Place some text here"
+                        <label>Article Details</label>
+                         <textarea class="textarea" id="pdet" placeholder="Place some text here"
                           style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                       </div>
                     </div>
                    
                   </div>
 
-                     <a id="postart" class="btn btn-primary">Upload Article Image</a>
+                     <button id="part" type="button" class="btn btn-primary">Upload Article Image</button>
                 
                 </form>
               </div>
@@ -83,7 +83,16 @@ include("functions/top.php"); ?>
 </div>
 <!-- ./wrapper -->
 
-
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter">
+    <div class="modal-dialog" role="document">
+        <div style="background: #f9f9ff; color: #ff0000;" class="modal-content">
+            <div class="modal-body">
+                <div id="msg" class="text-center"></div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
@@ -97,9 +106,17 @@ include("functions/top.php"); ?>
 <script>
   $(function () {
     // Summernote
-    $('.textarea').summernote();
+    $('.textarea').summernote({
+ toolbar: [
+    // [groupName, [list of button]]
+    ['style', ['bold', 'italic', 'underline', 'clear']],
+    ['font', ['strikethrough', 'superscript', 'subscript']],
+    ['fontname', ['fontname']],
+    ['fontsize', ['fontsize']]
+  ]
+    });
   })
 </script>
-
+<script src="../ajax.js"></script>
 </body>
 </html>

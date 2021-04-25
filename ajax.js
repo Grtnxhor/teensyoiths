@@ -283,4 +283,46 @@ $("#exampleModalCenter").modal();
     $("#exampleModalCenter").modal();
   });
 
+
+
+
+ //post article first step
+	$("#part").click(function() 
+	{
+
+	var ptit    = $("#ptit").val();
+	var pdet    = $("#pdet").val();
+
+	if (ptit == null || ptit == "") {
+
+		$('#msg').html("Article title is empty");
+	} else {
+
+	if (pdet == null || pdet == "") {
+
+		$('#msg').html("Article details can`t be empty");
+	} else {
+
+
+		$('#msg').html("Loading... Please wait");
+
+		$.ajax
+    (
+    {
+        type        :  'post',
+        url         :  'functions/init.php',
+        data        :  {ptit:ptit,pdet:pdet},
+        success     :  function(data)
+        {
+            $('#msg').html(data);
+        }
+    }
+        )
+
+	}
+}
+
+	$("#exampleModalCenter").modal();
+})
+
 })	
