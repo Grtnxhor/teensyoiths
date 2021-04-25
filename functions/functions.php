@@ -150,7 +150,7 @@ if (isset($_POST['sbemail'])) {
 			echo "Your email has been registered successfully. Kindly check your email for details";
 
 
-			//notify user by mail
+	//notify user by mail
 	$to 		= $sbmail;
     $from 		= "noreply@teensyouths.com.ng";
 
@@ -196,7 +196,7 @@ if (isset($_POST['sbemail'])) {
 
 
 //--------- user signup -----------//
-if (isset($_POST['fname']) && isset($_POST['email']) && isset($_POST['usname']) && isset($_POST['pword']) && isset($_POST['cpword']) && isset($_POST['tel']) && isset($_POST['msgr'])) {
+if (isset($_POST['fname']) && isset($_POST['email']) && isset($_POST['usname']) && isset($_POST['pword']) && isset($_POST['cpword']) && isset($_POST['tel'])) {
 	
 	$fname 		= escape(clean($_POST['fname']));
 	$email 		= escape(clean($_POST['email']));
@@ -204,7 +204,6 @@ if (isset($_POST['fname']) && isset($_POST['email']) && isset($_POST['usname']) 
 	$pword 		= escape(clean(md5($_POST['pword'])));
 	$cpword		= escape(clean(md5($_POST['cpword'])));
 	$tel 		= escape(clean($_POST['tel']));
-	$msgr		= escape(clean($_POST['msgr']));
 
 
 	if (email_exist($email)) {
@@ -217,20 +216,20 @@ if (isset($_POST['fname']) && isset($_POST['email']) && isset($_POST['usname']) 
 			echo "That username is taken. Kindly create another username";
 		} else {
 
-		register_user($fname, $email, $usname, $pword, $cpword, $tel, $msgr);
+		register_user($fname, $email, $usname, $pword, $cpword, $tel);
 	}
 }
 }
 
 //register user details into db
-function register_user($fname, $email, $usname, $pword, $cpword, $tel, $msgr) {
+function register_user($fname, $email, $usname, $pword, $cpword, $tel) {
 
 	//contants
 	$datereg = date("Y-m-d h:i:sa");
 	$verify  = token_generator();
 
-	$sql = "INSERT INTO user(`sn`, `name`, `email`, `pword`, `usname`, `tel`, `about`, `activator`, `datereg`, `active`)";
-	$sql.= "VALUES('1', '$fname', '$email', '$pword', '$usname', '$tel', '$msgr', '$verify', '$datereg', '0')";
+	$sql = "INSERT INTO user(`sn`, `name`, `email`, `pword`, `usname`, `tel`, `activator`, `datereg`, `active`)";
+	$sql.= "VALUES('1', '$fname', '$email', '$pword', '$usname', '$tel', '$verify', '$datereg', '0')";
 	$res = query($sql);
 
 	//send verification link to email
@@ -325,7 +324,7 @@ function signin_user($email, $pword) {
 		$_SESSION['Username'] = $hey;
 
 		echo "Loading...Please wait!";												
-		echo '<script>window.location.href ="./myarticles"</script>';
+		echo '<script>window.location.href ="dashboard/./"</script>';
 		} else {
 
 		echo "Invalid login details";
@@ -379,7 +378,7 @@ if (isset($_POST['fgtemail'])) {
 
 	$body = "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>TeensYouths.. Let the revolution begin</title></head><link rel='stylesheet' href='https://teensyouths.com.ng/css/bootstrap.min.css'><body style='text-align: center;'>";
 	$body .= "<section style='margin: 30px; margin-top: 50px ; background: #c92f2f; color: white;'>";
-	$body .= "<img style='margin-top: 35px' src='{$logo}' alt='DotLive'>";
+	$body .= "<img style='margin-top: 35px' src='{$logo}' alt='TeensYouths'>";
 	$body .= "<h1 style='margin-top: 45px; color: #fbb710'>Reset Password</h1>
 		<br/>";
 	$body .= "<p style='margin-left: 45px; margin-top: 34px; text-align: left; font-size: 17px;'>Hi there! <br/> You requested for a password reset. Kindly click on the link below to reset your password;</p>

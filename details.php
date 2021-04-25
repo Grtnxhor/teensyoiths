@@ -1,4 +1,4 @@
-<?php include("functions/top.php");
+<?php include("include/header.php");
 if (!isset($_GET['read'])) {
     
     redirect("./articles");
@@ -14,8 +14,7 @@ if (!isset($_GET['read'])) {
 
         $row = mysqli_fetch_array($res);
 
-        // get ip address
-        $ipp  = $_SERVER['SERVER_ADDR'];  
+        $ipp  = $_SERVER['REMOTE_ADDR'];  // get ip address
         $post_url = $data;
 
         if (isset($_SESSION['Username'])) {
@@ -84,159 +83,119 @@ if (!isset($_GET['read'])) {
     }
 }
  ?>
+		<aside id="colorlib-breadcrumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 breadcrumbs text-center">
+						<h2>Article Details</h2>
+						<p><span><a href="./">Home</a></span> / <span><a href="./articles">Articles </a></span> / <span>Article Details</span></p>
+					</div>
+				</div>
+			</div>
+		</aside>
 
-<!-- ##### Breadcrumb Area Start ##### -->
-<div class="breadcrumb-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="./">Home</a></li>
-                        <li class="breadcrumb-item"><a href="./articles">Articles</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Article Details</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- ##### Breadcrumb Area End ##### -->
+		<div id="colorlib-container">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-9 content">
+						<div class="row row-pb-lg">
+							<div class="col-md-12">
+								<div class="blog-entry">
+									<div class="blog-img blog-detail">
+										<img style="width: 800px; height: 400px;" src="<?php echo $row['pix'] ?>" class="img-responsive" alt="<?php echo $row['title'] ?>">
+									</div>
+									
+									<div class="desc">
+										<p class="meta">
+											<span class="cat"><a href="#"><?php echo $row['view'] ?><i class="icon-eye"></i></a></span>
+											<span class="date"><?php echo date('D, M d, Y', strtotime($row['datepost'])) ?></span>
+											<span class="pos">By <a href="#"><?php echo $row['author'] ?></a></span>
+										</p>
+										<h2><a href="#"><?php echo $row['title'] ?></a></h2>
+										<p><?php echo $row['details'] ?></p>
 
-<!-- ##### Sermons Area Start ##### -->
-<div class="sermons-details-area section-padding-100">
-    <div class="container">
-        <div class="row justify-content-between">
-            <!-- Blog Posts Area -->
-            <div class="col-12 col-lg-8">
-                <div class="sermons-details-area">
+										<ul class="colorlib-social-icons">
+								<li><a style="font-size: 20px;" href="#"><b>Share:</b></a></li>
+								<li><a target="_blank" data-media="<?php echo $row['pix']; ?>" href="https://twitter.com/home?status=https://teensyouths.com.ng/<?php echo $row['post_url'] ?>"><i class="icon-twitter"></i></a></li>
+								<li><a target="_blank" data-media="<?php echo $row['pix']; ?>" href="https://facebook.com/sharer.php?u=https://teensyouths.com.ng/<?php echo $row['post_url'] ?>"><i class="icon-facebook"></i></a></li>
+								<li><a target="_blank" data-action="share/whatsapp/share" data-media="<?php echo $row['pix']; ?>" href="https://api.whatsapp.com/send?text=https://teensyouths.com.ng/<?php echo $row['post_url'] ?>"><i class="icon-whatsapp"></i></a></li>
+							</ul>
+									</div>
 
-                    <!-- Sermons Details Area -->
-                    <div class="single-post-details-area">
-                        <div class="post-content">
-                            <h2 class="post-title mb-30"><?php echo $row['title'] ?></h2>
-                            <img class="mb-30" style="width: 500px; height: 500px" src="<?php echo $row['pix'] ?>"
-                                alt="<?php echo $row['title'] ?>">
-                            <!-- Catagory & Share -->
-                            <div
-                                class="catagory-share-meta d-flex flex-wrap justify-content-between align-items-center">
-
-                                <!-- Share -->
-                                <div class="share">
-                                    <span>Share: </span>
-                                    <a target="_blank" data-media="<?php echo $row['pix']; ?>"
-                                        href="https://facebook.com/sharer.php?u=https://teensyouths.com.ng/<?php echo $row['post_url'] ?>"><i
-                                            class="fa fa-facebook" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
-                                    <a target="_blank" data-media="<?php echo $row['pix']; ?>"
-                                        href="https://twitter.com/home?status=https://teensyouths.com.ng/<?php echo $row['post_url'] ?>"><i
-                                            class="fa fa-twitter" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;
-                                    <a target="_blank" data-media="<?php echo $row['pix']; ?>"
-                                        href="https://api.whatsapp.com/send?text=https://teensyouths.com.ng/<?php echo $row['post_url'] ?>"><i
-                                            class="fa fa-whatsapp" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                            <p><?php echo $row['details'] ?></p>
-
-                            <?php
-                                if ($row['quote'] != '') {
-                                    ?>
-                            <blockquote>
-                                <div class="blockquote-text">
-                                    <h6>“<?php echo $row['quote'] ?>” </h6>
-                                </div>
-                            </blockquote>
-                            <?php
-                            }
-                            ?>
-                        </div>
-                    </div>
-
-                    <?php 
+									
+								</div>
+							</div>
+						</div>
+						<div class="row row-pb-lg">
+							<div class="col-md-12">
+								<h2 class="heading-2">Comments</h2>
+								 <?php 
                         $weds = $row['post_url'];
                         $sql = "SELECT * FROM comment WHERE `post_url` = '$weds'";
                         $res = query($sql);
-                        if (row_count($res) == '') {} else {
+                        if (row_count($res) == '') {
+                        	echo '<h4>No Comment Posted</h4>';
+                        } else {
                         while ($row3 = mysqli_fetch_array($res)) {
                             
                         ?>
-                    <!-- Comment Area Start -->
-                    <div class="comment_area clearfix">
-                        <ol>
-                            <!-- Single Comment Area -->
-                            <li class="single_comment_area">
-                                <div class="comment-wrapper d-flex">
-                                    <!-- Comment Meta -->
-                                    <div class="comment-author">
-                                        <img src="img/2.png" alt="">
-                                    </div>
-                                    <!-- Comment Content -->
-                                    <div class="comment-content">
-                                        <span
-                                            class="comment-date"><?php echo date('D, M d, Y  ', strtotime($row3['date'])) ?></span>
-                                        <h5><?php echo $row3['fname'] ?></h5>
-                                        <p><?php echo $row3['text'] ?></p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ol>
-                    </div>
-                    <?php
-                    }
-                    }
-                    ?>
-                    <!-- Leave A Comment -->
-                    <div class="leave-comment-area mt-50 clearfix">
-                        <div class="comment-form">
-                            <h4 class="headline">Leave A Comment</h4>
-                            <!-- Contact Form Area -->
-                            <div class="contact-form-area">
-                                <form action="#" method="post">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <input id="cfname" type="text" class="form-control" id="contact-name"
-                                                    placeholder="Name">
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <input id="cemail" type="email" class="form-control" id="contact-email"
-                                                    placeholder="Email">
-                                            </div>
-                                        </div>
-                                        <input id="cpost" type="text" class="form-control" id="contact-email"
-                                            placeholder="Email" value="<?php echo $data ?>" hidden>
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <textarea id="cxt" class="form-control" name="message" id="message"
-                                                    cols="30" rows="10" placeholder="Message"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <button type="button" id="cbtn" class="btn crose-btn mt-15">Post
-                                                Comment</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+								<div class="review">
+						   		<div class="user-img" style="background-image: url(images/2.png)"></div>
+						   		<div class="desc">
+						   			<h4>
+						   				<span class="text-left"><?php echo $row3['fname'] ?></span>
+						   				<span class="text-right"><?php echo date('D, M d, Y  ', strtotime($row3['date'])) ?></span>
+						   			</h4>
+						   			<p><?php echo $row3['text'] ?></p>
+						   			<!---<p class="star">
+					   					<span class="text-left"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
+						   			</p>--->
+						   		</div>
+						   	</div>
+						   	<?php
+						   }
+						}
+						   ?>
+						   	
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<h2 class="heading-2">Say something</h2>
+								<form action="#">
+									<div class="row form-group">
+										<div class="col-md-6">
+											<!-- <label for="fname">First Name</label> -->
+											<input type="text" id="cfname" class="form-control" placeholder="Input Your Fullname">
+										</div>
+										<div class="col-md-6">
+											<!-- <label for="lname">Last Name</label> -->
+											<input type="email" id="cemail" class="form-control" placeholder="Input Your Email">
+										</div>
+									</div>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
+									 <input id="cpost" type="text" class="form-control" id="contact-email" placeholder="Email" value="<?php echo $data ?>" hidden>									
 
-            <!-- Blog Sidebar Area -->
-            <div class="col-12 col-sm-9 col-md-6 col-lg-3">
-                <div class="post-sidebar-area">
-
-
-                    <!-- ##### Single Widget Area ##### -->
-                    <div class="single-widget-area">
-                        <!-- Title -->
-                        <div class="widget-title">
-                            <h6>Articles from the same author</h6>
-                        </div>
-                        <?php
+									<div class="row form-group">
+										<div class="col-md-12">
+											<!-- <label for="message">Message</label> -->
+											<textarea name="message" id="cxt" cols="30" rows="10" class="form-control" placeholder="Say something about us"></textarea>
+										</div>
+									</div>
+									<div class="form-group">
+										<button type="button" id="cbtn" class="btn btn-primary">Post Comment</button>
+									</div>
+								</form>	
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="sidebar">
+							
+							
+							<div class="side">
+								<h2 class="sidebar-heading">Articles from the same author</h2>
+								<?php
                             $rd = $row['author'];
                 $sql2 = "SELECT * FROM article WHERE `author` = '$rd' ORDER BY RAND()";
                 $res2 = query($sql2);
@@ -245,84 +204,65 @@ if (!isset($_GET['read'])) {
                 } else {
                 while($row2 = mysqli_fetch_array($res2)) {
                 ?>
-                        <!-- Single Latest Posts -->
-                        <div class="single-latest-post">
-                            <a style="text-decoration: none;" href="./<?php echo $row2['post_url']; ?>"
-                                class="post-title">
-                                <h6><?php echo $row2['title']; ?></h6>
-                            </a>
-                            <p class="post-date"><?php echo date('D, M d, Y ', strtotime($row2['datepost'])) ?></p>
-                        </div>
-                        <?php 
-                        }
-                    }
-                             ?>
-                    </div>
+								<div class="f-blog">
+									<a href="<?php echo $row2['post_url']; ?>" class="blog-img" style="background-image: url(<?php echo $row2['pix']; ?>);">
+									</a>
+									<div class="desc">
+										<h3><a style="color: red;" href="<?php echo $row2['post_url']; ?>"><?php echo $row2['title']; ?></a></h3>
+										<p class="admin"><span><?php echo date('D, M d, Y ', strtotime($row2['datepost'])) ?></span></p>
+									</div>
+								</div>
+								
+								<?php
+							}
+						}
+						?>
+							</div>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
+<?php include("include/footer.php"); ?>
+	</div>
 
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+	</div>
+	
+	    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div style="background: #f9f9ff; color: #ff0000;" class="modal-content">
+                <div class="modal-body">
+                    <div id="msg" class="text-center"></div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<!-- ##### Sermons Area End ##### -->
+    </div> 
 
-<!-- ##### Subscribe Area Start ##### -->
-<section class="subscribe-area">
-    <div class="container">
-        <div class="row align-items-center">
-            <!-- Subscribe Text -->
-            <div class="col-12 col-lg-6">
-                <div class="subscribe-text">
-                    <h3>Subscribe To Receive Updates</h3>
-                    <h6>Enter your email address to receive blog updates.</h6>
-                </div>
-            </div>
-            <!-- Subscribe Form -->
-            <div class="col-12 col-lg-6">
-                <div class="subscribe-form text-right">
-                    <form>
-                        <input type="email" name="subscribe-email" id="subscribeEmail" placeholder="Your Email">
-                        <button type="button" id="subbtn" class="btn crose-btn">SEND ME FREE UPDATES</button>
-                        <i>
-                            <p id="err" style="color: white;">*We won't share your information with anyone.</p>
-                        </i>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- ##### Subscribe Area End ##### -->
-
-<?php include("includes/footer.php"); ?>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div style="background: #f9f9ff; color: #ff0000;" class="modal-content">
-            <div class="modal-body">
-                <div id="msg" class="text-center"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<!-- ##### All Javascript Script ##### -->
-<!-- jQuery-2.2.4 js -->
-<script src="js/jquery/jquery-2.2.4.min.js"></script>
-<!-- Popper js -->
-<script src="js/bootstrap/popper.min.js"></script>
-<!-- Bootstrap js -->
-<script src="js/bootstrap/bootstrap.min.js"></script>
-<!-- All Plugins js -->
-<script src="js/plugins/plugins.js"></script>
-<!-- Active js -->
-<script src="js/active.js"></script>
-<script src="ajax.js"></script>
-
-</body>
-
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Flexslider -->
+	<script src="js/jquery.flexslider-min.js"></script>
+	<!-- Owl carousel -->
+	<script src="js/owl.carousel.min.js"></script>
+	<!-- Magnific Popup -->
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/magnific-popup-options.js"></script>
+	<!-- Main -->
+	<script src="js/main.js"></script>
+	<script src="ajax.js"></script>
+	<script type="text/javascript">
+		document.getElementById('cpost').style.display = 'none';
+	</script>
+	</body>
 </html>
+

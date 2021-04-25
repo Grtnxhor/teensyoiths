@@ -40,7 +40,6 @@ $(document).ready(function()
 		var pword    = $("#pword").val();
 		var cpword   = $("#cpword").val();
 		var tel		 = $("#tel").val();
-		var msgr     = $("#msgr").val();
 
 		if (fname == "" || fname == null) {
 
@@ -77,11 +76,6 @@ $(document).ready(function()
 			$('#msg').html("Kindly input your telephone number");
 		}else {
 
-		if (msgr == "" || msgr == null) {
-
-			$('#msg').html("Tell us a little about yourself");
-		} else {
-
 			$('#msg').html("Loading... Please wait");
 
 		$.ajax
@@ -89,14 +83,13 @@ $(document).ready(function()
     {
         type        :  'post',
         url         :  'functions/init.php',
-        data        :  {fname:fname,email:email,usname:usname,pword:pword,cpword:cpword,tel:tel,msgr:msgr},
+        data        :  {fname:fname,email:email,usname:usname,pword:pword,cpword:cpword,tel:tel},
         success     :  function(data)
         {
             $('#msg').html(data);
         }
     }
         )
-		}
 		}
 		}
 		}
