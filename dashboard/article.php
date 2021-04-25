@@ -1,6 +1,7 @@
-<?php
+ <?php
 include("functions/top.php");
-$sql = "SELECT sum(`sn`) as ts FROM article";
+$username = $_SESSION['Username'];
+$sql = "SELECT sum(`sn`) as ts FROM article WHERE `author` = '$username'";
 $res = query($sql);
 $row = mysqli_fetch_array($res);
  ?>
@@ -47,27 +48,24 @@ $row = mysqli_fetch_array($res);
                                             <thead>
                                                 <tr>
                                                     <th>Title</th>
-                                                    <th>Author </th>
                                                     <th>Monthly View</th>
                                                     <th>Annual View</th>
-                                                    <th>Author Mail</th>
                                                     <th>Date Uploaded</th>
                                                     <th>More</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php
- $sql="SELECT * FROM article";
+$username = $_SESSION['Username'];
+$sql = "SELECT * FROM article WHERE `author` = '$username'";
  $result_set=query($sql);
   while($row= mysqli_fetch_array($result_set))
  {
   ?>
                                                 <tr>
                                                     <td><?php echo $row['title'] ?></td>
-                                                    <td><?php echo $row['author'] ?></td>
                                                     <td><?php echo $row['view'] ?></td>
                                                     <td><?php echo $row['totview'] ?></td>
-                                                    <td><?php echo $row['author_mail'] ?></td>
                                                     <td><?php echo date('D, M d, Y', strtotime($row['datepost'])) ?>
                                                     </td>
                                                     <?php echo '
@@ -79,7 +77,7 @@ $row = mysqli_fetch_array($res);
                   }
                   if(row_count($result_set) == 0) {
 
-  echo "<span style='color:red'>No records found</span>";
+  echo "<span style='color:red'>No Article Uploaded Yet</span>";
  }
                   ?>
                                             </tbody>

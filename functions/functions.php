@@ -473,4 +473,56 @@ if (isset($_POST['password'])) {
 	echo "Wrongly typed password";
 }
 }
+
+
+
+
+//upload profile picture
+//User Profile image
+if (!empty($_FILES["file"]["name"])) {
+	
+			$target_dir = "../artfile/dp/";
+			$target_file =  basename($_FILES["file"]["name"]);
+			$targetFilePath = $target_dir . $target_file;
+			$uploadOk = 1;
+			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+	
+			   
+			// Check if file already exists
+			if (file_exists($targetFilePath)) {
+			    echo "Sorry, this apartment Image is already registered on our database. Kindly rename your file and try again.";
+			    $uploadOk = 0;
+			} else {
+
+			// Allow certain file formats
+			if($imageFileType != "jpg" && $imageFileType != "jpeg") {
+			    echo "Sorry, only JPG and JPEG files are allowed.";
+			    $uploadOk = 0;
+			} else {
+			// Check if $uploadOk is set to 0 by an error
+			if ($uploadOk == 0) {
+			   echo "Sorry, your apartment Image was not uploaded.";
+			// if everything is ok, try to upload file
+			} else {
+			   
+			   move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath);
+			   img_prod($target_file);
+			   echo 'Loading.. Please wait!';
+   			echo '<script>window.location.href ="./"</script>';
+		}
+	}	    	
+}
+}
+
+
+///sql update product image
+function img_prod($target_file) {
+
+	$proid    = $_SESSION['user'];
+
+	$sql 	  = "UPDATE user SET `propix` = '$target_file' WHERE `email` = '$proid'";
+	$res = query($sql);
+
+	echo 'Loading.. Please wait!';
+}
 ?>

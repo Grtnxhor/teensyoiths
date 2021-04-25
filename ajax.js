@@ -260,6 +260,27 @@ $("#exampleModalCenter").modal();
 })
 
 
-//post article
+//upload profile picture
+  $("#proupl").click(function () {
+    var fd = new FormData();
+    var files = $("#file").prop("files")[0];
+    fd.append("file", files);
+
+    if (files == null || files == "") {
+      $("#msg").html("Kindly select a picture");
+    } else {
+      $.ajax({
+        type: "post",
+        url: "../functions/init.php",
+        data: fd,
+        contentType: false,
+        processData: false,
+        success: function (data) {
+          $("#msg").html(data);
+        },
+      });
+    }
+    $("#exampleModalCenter").modal();
+  });
 
 })	

@@ -14,6 +14,12 @@ if (!isset($_GET['read'])) {
 
         $row = mysqli_fetch_array($res);
 
+        if($row['pix'] == '') {
+
+         $row['pix'] = "image/2.png";
+          } 
+
+
         $ipp  = $_SERVER['REMOTE_ADDR'];  // get ip address
         $post_url = $data;
 

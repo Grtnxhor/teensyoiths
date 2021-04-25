@@ -12,7 +12,10 @@
                      echo '<a href="dashboard/./write"><h4 style="color: red;">&nbsp;&nbsp;&nbsp;Write an Article</h4></a>';
                 } else {
                 while($row = mysqli_fetch_array($res)) {
-                   
+                  if($row['pix'] == '') {
+
+                  	$row['pix'] = "image/2.png";
+                  } 
                 ?>
                     <li style="background-image: url(<?php echo $row['pix']; ?>);">
                         <div class="overlay"></div>
@@ -54,6 +57,11 @@
                      echo '<a href="dashboard/./write"><h4 style="color: red;">&nbsp;&nbsp;&nbsp;Write an Article</h4></a>';
                 } else {
                 while($row = mysqli_fetch_array($res)) {
+                	if($row['pix'] == '') {
+
+                  	$row['pix'] = "image/2.png";
+                  } 
+
                     $det = $row['details'];
                     /*$z = str_word_count($det);
                     $w = "...";
@@ -94,6 +102,11 @@
                     echo '<a href="dashboard/./write"><h4 style="color: red;">&nbsp;&nbsp;&nbsp;Become the Best Read Author</h4></a>';
                 } else {
                 while($row = mysqli_fetch_array($res)) {
+                	if($row['pix'] == '') {
+
+                  	$row['pix'] = "image/2.png";
+                  } 
+
                     $det = $row['details'];
                     /*$z = str_word_count($det);
                     $w = "...";
@@ -150,6 +163,11 @@
                      echo '<a href="dashboard/./write"><h4 style="color: red;">&nbsp;&nbsp;&nbsp;Write an Article</h4></a>';
                 } else {
                 while($row = mysqli_fetch_array($res)) {
+                	if($row['pix'] == '') {
+
+                  	$row['pix'] = "image/2.png";
+                  } 
+
                     $det = $row['details'];
                     /*$z = str_word_count($det);
                     $w = "...";
@@ -191,6 +209,11 @@
                      echo '<a href="dashboard/./write"><h4 style="color: red;">&nbsp;&nbsp;&nbsp;Write an Article</h4></a>';
                 } else {
                 while($row = mysqli_fetch_array($res)) {
+                	if($row['pix'] == '') {
+
+                  	$row['pix'] = "image/2.png";
+                  } 
+                  
                     $det = $row['details'];
                     /*$z = str_word_count($det);
                     $w = "...";
