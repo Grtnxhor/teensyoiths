@@ -525,4 +525,35 @@ function img_prod($target_file) {
 
 	echo 'Loading.. Please wait!';
 }
+
+
+
+
+//post article first step
+if(isset($_POST['ptit']) && isset($_POST['pdet'])) {
+
+	$title 		= clean(escape($_POST['ptit']));
+	$details    = escape($_POST['pdet']);  
+
+	//constants
+    $date       = date("Y-m-d h:i:sa");
+    $author     = $_SESSION['Username'];
+    $authormail = $_SESSION['user'];
+    $post_url   = str_replace(' ', '-', $title);
+
+
+     //check if title exist
+    $ssl = "SELECT * FROM article WHERE `post_url` = '$post_url'";
+    $rsl = query($ssl);
+    if (row_count($rsl) == 1) {
+
+
+    //asign a new post_url 
+      $post_url = str_replace(' ', '-', $title).rand(0, 99);
+
+    } else {
+ 
+    $post_url   = str_replace(' ', '-', $title); 
+    }
+}
 ?>
