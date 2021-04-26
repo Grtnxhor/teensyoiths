@@ -478,7 +478,6 @@ if (isset($_POST['password'])) {
 
 
 //upload profile picture
-//User Profile image
 if (!empty($_FILES["file"]["name"])) {
 	
 			$target_dir = "../artfile/dp/";
@@ -541,6 +540,13 @@ if(isset($_POST['ptit']) && isset($_POST['pdet'])) {
     $authormail = $_SESSION['user'];
     $post_url   = str_replace(' ', '-', $title);
 
+    //get user profile
+    $fred = "SELECT * FROM user WHERE `email` = '$authormail'";
+    $trd  = query($fred);
+    $trf  = mysqli_fetch_array($trd);
+
+    $propix = $trf['propix'];
+
 
      //check if title exist
     $ssl = "SELECT * FROM article WHERE `post_url` = '$post_url'";
@@ -555,5 +561,63 @@ if(isset($_POST['ptit']) && isset($_POST['pdet'])) {
  
     $post_url   = str_replace(' ', '-', $title); 
     }
+
+    //insert details into db
+    $sql = "INSERT INTO article(`sn`, `details`, `title`, `author`, `author_mail`, `view`, `datepost`, `post_url` , `propix`)";
+    $sql.= "VALUES('1', '$details', '$title', '$author', '$authormail', '0', '$date', '$post_url', '$propix')";
+    $res = query($sql);
+
+
+	$_SESSION['prl'] = $post_url;
+
+    //redirect to upload image
+    echo '<script>window.location.href ="./writepix"</script>';
+}
+
+
+
+
+
+//upload post picture
+if (!empty($_FILES["fle"]["name"])) {
+	
+			$target_dir = "../artfile/";
+			$target_file =  basename($_FILES["fle"]["name"]);
+			$targetFilePath = $target_dir . $target_file;
+			$uploadOk = 1;
+			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+	
+			
+			// Allow certain file formats
+			if($imageFileType != "jpg" && $imageFileType != "jpeg") {
+			    echo "Sorry, only JPG and JPEG files are allowed.";
+			    $uploadOk = 0;
+			} else {
+			// Check if $uploadOk is set to 0 by an error
+			if ($uploadOk == 0) {
+			   echo "Sorry, your ads image was not uploaded.";
+			// if everything is ok, try to upload file
+			} else {
+			   
+			   move_uploaded_file($_FILES["fle"]["tmp_name"], $targetFilePath);
+			   img_ads($target_file);
+   			
+		
+	}	    	
+}
+}
+
+
+///sql update ads image
+function img_ads($target_file) {
+
+	$code     = $_SESSION['prl'];
+
+	$sql 	  = "UPDATE article SET `pix` = '$target_file' WHERE `post_url` = '$code'";
+	$res 	  = query($sql);
+
+	echo 'Loading.. Please wait';
+	echo '<script>window.location.href ="./done"</script>';
+
 }
 ?>

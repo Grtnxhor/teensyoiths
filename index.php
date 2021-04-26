@@ -14,10 +14,10 @@
                 while($row = mysqli_fetch_array($res)) {
                   if($row['pix'] == '') {
 
-                  	$row['pix'] = "image/2.png";
+                  	$row['pix'] = "images/2.png";
                   } 
                 ?>
-                    <li style="background-image: url(<?php echo $row['pix']; ?>);">
+                    <li style="background-image: url('artfile/<?php echo $row['pix']; ?>');">
                         <div class="overlay"></div>
                         <div class="container">
                             <div class="row">
@@ -59,8 +59,23 @@
                 while($row = mysqli_fetch_array($res)) {
                 	if($row['pix'] == '') {
 
-                  	$row['pix'] = "image/2.png";
+                  	$a = "images/2.png";
+                  } else{
+
+                  	$a = 'artfile/'.$row['pix'];
+
                   } 
+
+                  if($row['propix'] == '') {
+                  	
+                  	$b = "images/2.png";
+
+                  } else {
+
+                  	
+                  	$b = 'artfile/dp/'.$row['propix'];
+
+                  }
 
                     $det = $row['details'];
                     /*$z = str_word_count($det);
@@ -72,7 +87,7 @@
 					<div class="col-md-4">
 						<div class="blog-entry">
 							<div class="blog-img">
-								<a href="<?php echo $row['post_url']; ?>"><img src="<?php echo $row['pix']; ?>" class="img-responsive" style="width: 400px; height: 300px;" alt="<?php echo $row['title']; ?>"></a>
+								<a href="<?php echo $row['post_url']; ?>"><img src="<?php echo $a; ?>" class="img-responsive" style="width: 400px; height: 300px;" alt="<?php echo $row['title']; ?>"></a>
 							</div>
 							<div class="desc">
 								<p class="meta">
@@ -81,6 +96,7 @@
 								</p>
 								<h2><a href="<?php echo $row['post_url']; ?>"><?php echo $row['title']; ?></a></h2>
 								<p><?php echo $y; ?> ...</p>
+								<br/>
 								<div><a href="<?php echo $row['post_url']; ?>"><button class="btn btn-primary">Read More</button></a></div>
 							</div>
 						</div>
@@ -104,8 +120,23 @@
                 while($row = mysqli_fetch_array($res)) {
                 	if($row['pix'] == '') {
 
-                  	$row['pix'] = "image/2.png";
+                  	$a = "images/2.png";
+                  } else{
+
+                  	$a = 'artfile/'.$row['pix'];
+
                   } 
+
+                  if($row['propix'] == '') {
+                  	
+                  	$b = "images/2.png";
+
+                  } else {
+
+                  	
+                  	$b = 'artfile/dp/'.$row['propix'];
+
+                  }
 
                     $det = $row['details'];
                     /*$z = str_word_count($det);
@@ -117,7 +148,7 @@
                 	<div class="col-md-8">
 						<div class="blog-entry">
 							<div class="blog-img">
-								<a href="<?php echo $row['post_url']; ?>"><img style="width: 800px; height: 600px;" src="<?php echo $row['propix']; ?>" class="img-responsive" alt="<?php echo $row['author']; ?>"></a>
+								<a href="<?php echo $row['post_url']; ?>"><img style="width: 900px; max-height: 700px; min-height: 500px;" src="<?php echo $b; ?>" class="img-responsive" alt="<?php echo $row['author']; ?>"></a>
 							</div>
 							<div class="desc">
 								
@@ -130,7 +161,7 @@
                 		<h2><b>Best-Read Article <i class="icon-star"></i></b></h2>
 						<div class="blog-entry">
 							<div class="blog-img">
-								<a href="<?php echo $row['post_url']; ?>"><img src="<?php echo $row['pix']; ?>" class="img-responsive" style="width: 400px; height: 300px;" alt="<?php echo $row['title']; ?>"></a>
+								<a href="<?php echo $row['post_url']; ?>"><img src="<?php echo $a; ?>" class="img-responsive" style="width: 400px; height: 300px;" alt="<?php echo $row['title']; ?>"></a>
 							</div>
 							<div class="desc">
 								<p class="meta">
@@ -165,9 +196,23 @@
                 while($row = mysqli_fetch_array($res)) {
                 	if($row['pix'] == '') {
 
-                  	$row['pix'] = "image/2.png";
+                  	$a = "images/2.png";
+                  } else{
+
+                  	$a = 'artfile/'.$row['pix'];
+
                   } 
 
+                  if($row['propix'] == '') {
+                  	
+                  	$b = "images/2.png";
+
+                  } else {
+
+                  	
+                  	$b = 'artfile/dp/'.$row['propix'];
+
+                  }
                     $det = $row['details'];
                     /*$z = str_word_count($det);
                     $w = "...";
@@ -179,7 +224,7 @@
 						
 						<div class="blog-entry">
 							<div class="blog-img">
-								<a href="<?php echo $row['post_url']; ?>"><img src="<?php echo $row['pix']; ?>" class="img-responsive" style="width: 400px; height: 300px;" alt="<?php echo $row['title']; ?>"></a>
+								<a href="<?php echo $row['post_url']; ?>"><img src="<?php echo $a; ?>" class="img-responsive" style="width: 400px; height: 300px;" alt="<?php echo $row['title']; ?>"></a>
 							</div>
 							<div class="desc">
 								<p class="meta">
@@ -211,8 +256,23 @@
                 while($row = mysqli_fetch_array($res)) {
                 	if($row['pix'] == '') {
 
-                  	$row['pix'] = "image/2.png";
+                  	$a = "images/2.png";
+                  } else{
+
+                  	$a = 'artfile/'.$row['pix'];
+
                   } 
+
+                  if($row['propix'] == '') {
+
+                  	$b = "images/2.png";
+
+                  } else {
+
+                  	
+                  	$b = 'artfile/dp/'.$row['propix'];
+
+                  }
                   
                     $det = $row['details'];
                     /*$z = str_word_count($det);
@@ -224,7 +284,7 @@
 					<div class="col-md-4">
 						<div class="blog-entry">
 							<div class="blog-img">
-								<a href="<?php echo $row['post_url']; ?>"><img src="<?php echo $row['pix']; ?>" class="img-responsive" style="width: 400px; height: 300px;" alt="<?php echo $row['title']; ?>"></a>
+								<a href="<?php echo $row['post_url']; ?>"><img src="<?php echo $a; ?>" class="img-responsive" style="width: 400px; height: 300px;" alt="<?php echo $row['title']; ?>"></a>
 							</div>
 							<div class="desc">
 								<p class="meta">
@@ -242,7 +302,7 @@
 						<h2><b>Suggested Author</b></h2>
 						<div class="blog-entry">
 							<div class="blog-img">
-								<a href="<?php echo $row['post_url']; ?>"><img src="<?php echo $row['propix']; ?>" class="img-responsive" style="width: 400px; height: 300px;" alt="<?php echo $row['author']; ?>"></a>
+								<a href="<?php echo $row['post_url']; ?>"><img src="<?php echo $b; ?>" class="img-responsive" style="width: 900px; max-height: 700px; min-height: 500px;" alt="<?php echo $row['author']; ?>"></a>
 							</div>
 							<div class="desc">
 								<h2><a href="<?php echo $row['post_url']; ?>"><?php echo $row['author']; ?></a></h2>

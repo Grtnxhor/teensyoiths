@@ -14,10 +14,25 @@ if (!isset($_GET['read'])) {
 
         $row = mysqli_fetch_array($res);
 
-        if($row['pix'] == '') {
+       if($row['pix'] == '') {
 
-         $row['pix'] = "image/2.png";
-          } 
+                  	$a = "images/2.png";
+                  } else{
+
+                  	$a = 'artfile/'.$row['pix'];
+
+                  } 
+
+                  if($row['propix'] == '') {
+                  	
+                  	$b = "images/2.png";
+
+                  } else {
+
+                  	
+                  	$b = 'artfile/dp/'.$row['propix'];
+
+                  }
 
 
         $ipp  = $_SERVER['REMOTE_ADDR'];  // get ip address
@@ -108,7 +123,7 @@ if (!isset($_GET['read'])) {
 							<div class="col-md-12">
 								<div class="blog-entry">
 									<div class="blog-img blog-detail">
-										<img style="width: 800px; height: 400px;" src="<?php echo $row['pix'] ?>" class="img-responsive" alt="<?php echo $row['title'] ?>">
+										<img style="width: 800px; height: 400px;" src="<?php echo $a ?>" class="img-responsive" alt="<?php echo $row['title'] ?>">
 									</div>
 									
 									<div class="desc">
@@ -209,9 +224,29 @@ if (!isset($_GET['read'])) {
                     echo 'No uploaded articles yet';
                 } else {
                 while($row2 = mysqli_fetch_array($res2)) {
+				
+				if($row2['pix'] == '') {
+
+                  	$a = "images/2.png";
+                  } else{
+
+                  	$a = 'artfile/'.$row2['pix'];
+
+                  } 
+
+                  if($row2['propix'] == '') {
+                  	
+                  	$b = "images/2.png";
+
+                  } else {
+
+                  	
+                  	$b = 'artfile/dp/'.$row2['propix'];
+
+                  }
                 ?>
 								<div class="f-blog">
-									<a href="<?php echo $row2['post_url']; ?>" class="blog-img" style="background-image: url(<?php echo $row2['pix']; ?>);">
+									<a href="<?php echo $row2['post_url']; ?>" class="blog-img" style="background-image: url(<?php echo $a; ?>);">
 									</a>
 									<div class="desc">
 										<h3><a style="color: red;" href="<?php echo $row2['post_url']; ?>"><?php echo $row2['title']; ?></a></h3>

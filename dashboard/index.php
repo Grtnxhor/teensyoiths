@@ -96,26 +96,11 @@ $tot = date("M t, Y", strtotime($a_date));
               </div>
             </div>
 
-            <div class="card card-primary card-outline">
-              <div class="card-body">
-               <h5 class="card-text">
-                 <b>Manage Profile </b>
-                </h5>
-                <a href="./profile" class="card-link">My Profile</a>
-                <a href="./logout" class="card-link">Logout</a>
-              </div>
-            </div><!-- /.card -->
+           
           </div>
           <!-- /.col-md-6 -->
           <div class="col-lg-6">
-            <div class="card card-primary card-outline">
-              <div class="card-header">
-                <h5 class="card-title m-0"><b>Schedule an Article </b></h5>
-              </div>
-              <div class="card-body">
-                <a href="./schedule" class="btn btn-primary">Schedule Now</a>
-              </div>
-            </div>
+           
             <div class="card card-primary card-outline">
               <div class="card-header">
                 <h5 class="card-title m-0"><b>My Articles </b></h5>

@@ -310,7 +310,7 @@ $("#exampleModalCenter").modal();
     (
     {
         type        :  'post',
-        url         :  'functions/init.php',
+        url         :  '../functions/init.php',
         data        :  {ptit:ptit,pdet:pdet},
         success     :  function(data)
         {
@@ -324,5 +324,31 @@ $("#exampleModalCenter").modal();
 
 	$("#exampleModalCenter").modal();
 })
+
+
+
+//upload post article
+  $("#pstupl").click(function () {
+    var fd = new FormData();
+    var files = $("#psfile").prop("files")[0];
+    fd.append("fle", files);
+
+    if (files == null || files == "") {
+      $("#msg").html("Kindly select a picture");
+    } else {
+      $.ajax({
+        type: "post",
+        url: "../functions/init.php",
+        data: fd,
+        contentType: false,
+        processData: false,
+        success: function (data) {
+          $("#msg").html(data);
+        },
+      });
+    }
+    $("#exampleModalCenter").modal();
+  });
+
 
 })	

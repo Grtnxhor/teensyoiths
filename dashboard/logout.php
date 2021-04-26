@@ -2,7 +2,7 @@
 include("functions/init.php");
 
 session_destroy();
-header("location: ./login");
+header("location: ../signin");
 
 // redirect("login.php");
 ?>

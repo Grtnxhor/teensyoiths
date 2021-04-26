@@ -13,9 +13,6 @@
 
     <!-- Favicon -->
     <link rel="icon" href="images/2.png">
-     <!-- summernote -->
-    <link rel="stylesheet" href="summernote/summernote-bs4.css">
-
 
     <!-- Facebook and Twitter integration -->
     <meta property="og:title" content="" />

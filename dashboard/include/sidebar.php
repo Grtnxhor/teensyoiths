@@ -79,6 +79,8 @@
 
                         </li>
                         <br />
+                        
+                         <br />
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-list"></i>
@@ -100,37 +102,12 @@
                   <p>Write Article</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="./schedule" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Schedule Article</p>
-                </a>
-              </li>
               
              
             </ul>
                         </li>
                         <br />
-                        <li class="nav-item has-treeview">
-                            <a href="./comments" class="nav-link">
-                                <i class="nav-icon fas fa-envelope"></i>
-                                <p>
-                                    Comments
-                                    <i class="right fas fa-angle-right"></i>
-                                </p>
-                            </a>
-                           
-                        </li>
-                        <br />
-                        <li class="nav-item has-treeview">
-                            <a href="./profile" class="nav-link">
-                                <i class="nav-icon fas fa-user"></i>
-                                <p>
-                                    Manage Profile
-                                    <i class="fas fa-angle-right right"></i>
-                                </p>
-                            </a>
-                        </li>
+                        
                          <br />
                         <li class="nav-item has-treeview">
                             <a href="./logout" class="nav-link">
