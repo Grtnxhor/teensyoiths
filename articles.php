@@ -44,17 +44,18 @@
 
                   }
 
-                    $det = $row['details'];
-                    /*$z = str_word_count($det);
-                    $w = "...";
-                    $y = substr_replace($det, $w, $z);*/
-                    
-                    $y = substr($det,0,strpos($det,' ',600)) . " ...";
+                   $z = str_word_count($det);
+                   
+                     if($z <= 3000) {
+
+                      $y = substr($det,0,strpos($det,' ',50)) . " ...";
+
+                    }
                 ?>
 							<div class="col-md-12">
 								<div class="blog-entry">
 									<div class="blog-img">
-										<a href="<?php echo $row['post_url']; ?>"><img style="width: 900px; max-height: 700px; min-height: 500px;" src="<?php echo $b; ?>" class="img-responsive" alt="<?php echo $row['author']; ?>"></a>
+										<a href="<?php echo $row['post_url']; ?>"><img style="width: 700px; max-height: 400px; min-height: 500px;" src="<?php echo $b; ?>" class="img-responsive" alt="<?php echo $row['author']; ?>"></a>
 									</div>
 									<div class="desc">
 										<h2><a href="<?php echo $row['post_url']; ?>"><?php echo $row['author']; ?></a></h2>
@@ -99,12 +100,8 @@
 
                   } 
 
-                    $det = $row['details'];
-                    /*$z = str_word_count($det);
-                    $w = "...";
-                    $y = substr_replace($det, $w, $z);*/
+                   
                     
-                    $y = substr($det,0,strpos($det,' ',600)) . " ...";
                 ?>
 							<div class="col-md-6">
 								<div class="blog-entry">
@@ -117,10 +114,11 @@
                                 <span class="pos">By <a href="<?php echo $row['post_url']; ?>"><?php echo $row['author']; ?></a></span>
 								</p>
 								<h2><a href="<?php echo $row['post_url']; ?>"><?php echo $row['title']; ?></a></h2>
-								<p><?php echo $y; ?> ...</p>
+								
 								<br/>
 								
-								<div><a href="<?php echo $row['post_url']; ?>"><button class="btn btn-primary">Read More</button></a></div>
+								<div><a href="<?php echo $row['post_url']; ?>"><button class="btn btn-primary">Read More</button></a></div> 
+								<br/>
 									</div>
 								</div>
 							</div>

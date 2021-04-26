@@ -534,6 +534,11 @@ if(isset($_POST['ptit']) && isset($_POST['pdet'])) {
 	$title 		= clean(escape($_POST['ptit']));
 	$details    = escape($_POST['pdet']);  
 
+	if(str_word_count($details) > 3000) {
+
+		echo "Your article can not be greater than 3,000 words";
+	} else {
+
 	//constants
     $date       = date("Y-m-d h:i:sa");
     $author     = $_SESSION['Username'];
@@ -572,6 +577,7 @@ if(isset($_POST['ptit']) && isset($_POST['pdet'])) {
 
     //redirect to upload image
     echo '<script>window.location.href ="./writepix"</script>';
+}
 }
 
 
