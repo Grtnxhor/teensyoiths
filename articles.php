@@ -117,7 +117,7 @@
 								
 								<br/>
 								
-								<div><a href="<?php echo $row['post_url']; ?>"><button class="btn btn-primary">Read More</button></a></div> 
+								<div><a href="<?php echo $row['post_url']; ?>"><button class="btn btn-primary">Read Article</button></a></div> 
 								<br/>
 									</div>
 								</div>
