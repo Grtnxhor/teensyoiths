@@ -133,8 +133,10 @@ if (!isset($_GET['read'])) {
 											<span class="pos">By <a href="#"><?php echo $row['author'] ?></a></span>
 										</p>
 										<h2><a href="#"><?php echo $row['title'] ?></a></h2>
-										<p><?php echo $row['details'] ?></p>
 
+										
+										<p><?php echo $row['details'] ?></p>
+									
 										<ul class="colorlib-social-icons">
 								<li><a style="font-size: 20px;" href="#"><b>Share:</b></a></li>
 								<li><a target="_blank" data-media="<?php echo $row['pix']; ?>" href="https://twitter.com/home?status=https://teensyouths.com.ng/<?php echo $row['post_url'] ?>"><i class="icon-twitter"></i></a></li>

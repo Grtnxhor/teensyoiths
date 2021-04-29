@@ -81,7 +81,8 @@ if(!isset($_SESSION['user']) && !isset($_SESSION['Username'])) {
                                 } else {
                                 echo '<li><a style="color:red;" href="dashboard/./"><b>My DashBoard</b></a></li> ';
                                 }                          
-                               ?>
+                               ?>                               
+                            <li><a href="./signin">Sign In</a></li>
                             </ul>
                         </div>
                     </div>

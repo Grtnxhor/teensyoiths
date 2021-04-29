@@ -311,7 +311,7 @@
 						<h2><b>Suggested Author</b></h2>
 						<div class="blog-entry">
 							<div class="blog-img">
-								<a href="<?php echo $row['post_url']; ?>"><img src="<?php echo $b; ?>" class="img-responsive" style="width: 700px; max-height: 400px; min-height: 500px;" alt="<?php echo $row['author']; ?>"></a>
+								<a href="<?php echo $row['post_url']; ?>"><img src="<?php echo $b; ?>" class="img-responsive" style="width: 700px; max-height: 700px; min-height: 500px;" alt="<?php echo $row['author']; ?>"></a>
 							</div>
 							<div class="desc">
 								<h2><a href="<?php echo $row['post_url']; ?>"><?php echo $row['author']; ?></a></h2>

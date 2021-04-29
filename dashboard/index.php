@@ -44,7 +44,7 @@ $tot = date("M t, Y", strtotime($a_date));
  $row= mysqli_fetch_array($result_set);
  
          ?>
-                            <span class="info-box-number"><?php echo $row['total']; ?></span>
+                            <span class="info-box-number"><?php echo number_format($row['total']); ?></span>
                         </div>
                         <!-- /.info-box-content -->
                     </div>
@@ -59,7 +59,7 @@ $tot = date("M t, Y", strtotime($a_date));
                             <span class="info-box-text">Your Most Read Article</span>
                             <?php
                  
- $sql="SELECT * from article ORDER BY view desc LIMIT 1";
+ $sql="SELECT * from article WHERE view BETWEEN 1 AND 1000000000000000 ORDER BY view desc LIMIT 1";
  $result_set=query($sql);
  $row2= mysqli_fetch_array($result_set);
 
