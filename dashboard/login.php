@@ -85,6 +85,8 @@ include("../functions/init.php");
 <script src="plugins/sweetalert2/sweetalert2.min.js"></script>
 <!-- Toastr -->
 <script src="plugins/toastr/toastr.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <script type="text/javascript">
   $(function() {
     const Toast = Swal.mixin({

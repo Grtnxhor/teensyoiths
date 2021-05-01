@@ -291,7 +291,7 @@ $("#exampleModalCenter").modal();
 	{
 
 	var ptit    = $("#ptit").val();
-	var pdet    = $("#pdet").val();
+	var pdet    = $('#pdet').val();
 
 	if (ptit == null || ptit == "") {
 

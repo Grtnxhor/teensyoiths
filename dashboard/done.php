@@ -92,6 +92,8 @@ include("functions/top.php");
 <script src="dist/js/demo.js"></script>
 <!-- Summernote -->
 <script src="plugins/summernote/summernote-bs4.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <script>
   $(function () {
     // Summernote

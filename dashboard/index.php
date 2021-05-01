@@ -141,6 +141,8 @@ $tot = date("M t, Y", strtotime($a_date));
 <script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function () {
   bsCustomFileInput.init();

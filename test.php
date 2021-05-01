@@ -1,54 +1,28 @@
-
-
 	<?php
-	include("functions/init.php");
+	include("include/header.php");
+  $description = $_SESSION['det'];
+
+ /* function myTruncate($string, $limit, $break=".", $pad="...")
+{
+  // return with no change if string is shorter than $limit
+  if(strlen($string) <= $limit) return $string;
+
+  // is $break present between $limit and the end of the string?
+  if(false !== ($breakpoint = strpos($string, $break, $limit))) {
+    if($breakpoint < strlen($string) - 1) {
+      $string = substr($string, 0, $breakpoint) . $pad;
+    }
+  }
+
+  return $string;
+}
 
 
+$shortdesc = myTruncate($description, 200);
+  echo "<p>$shortdesc</p>";)*/
+  ?>
 
-
-
-                $sql = "SELECT * FROM article WHERE id = 29";
-                $res = query($sql);
-                if (row_count($res) == "") {
-                     echo '<a href="dashboard/./write"><h4 style="color: red;">&nbsp;&nbsp;&nbsp;Write an Article</h4></a>';
-                } else {
-                while($row = mysqli_fetch_array($res)) {
-                	if($row['pix'] == '') {
-
-                  	$a = "images/2.png";
-                  } else{
-
-                  	$a = 'artfile/'.$row['pix'];
-
-                  } 
-
-                  if($row['propix'] == '') {
-                  	
-                  	$b = "images/2.png";
-
-                  } else {
-
-                  	
-                  	$b = 'artfile/dp/'.$row['propix'];
-
-                  }
-
-
-                  $Tag  = 'My Name is Gaurav'; 
-
-                    $det = $row['details'];
-                    $z = str_word_count($det);
-                    
-
-
-                     if($z <= 2500) {
-
-                    	echo $y = substr($det,0,strpos($det,' ',250)) . " ...";
-
-                    }
-
-                    
-                   
-                }
-            }
-                ?>
+  <div class="col-md-6">
+    <p style="width: 40%" class="col-md-6"><?php echo "<span class='col-md-6'>$description</span>"; ?>
+    </p>
+  </div>

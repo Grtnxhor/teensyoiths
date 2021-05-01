@@ -532,12 +532,15 @@ function img_prod($target_file) {
 if(isset($_POST['ptit']) && isset($_POST['pdet'])) {
 
 	$title 		= clean(escape($_POST['ptit']));
-	$details    = escape($_POST['pdet']);  
+	$details    = $_POST['pdet'];  
 
-	if(str_word_count($details) > 3000) {
+
+	//echo $details;
+
+	/*if(str_word_count($details) > 3000) {
 
 		echo "Your article can not be greater than 3,000 words";
-	} else {
+	} else {*/
 
 	//constants
     $date       = date("Y-m-d h:i:sa");
@@ -568,7 +571,7 @@ if(isset($_POST['ptit']) && isset($_POST['pdet'])) {
     }
 
     //insert details into db
-    $sql = "INSERT INTO article(`sn`, `details`, `title`, `author`, `author_mail`, `view`, `datepost`, `post_url` , `propix`)";
+   $sql = "INSERT INTO article(`sn`, `details`, `title`, `author`, `author_mail`, `view`, `datepost`, `post_url` , `propix`)";
     $sql.= "VALUES('1', '$details', '$title', '$author', '$authormail', '0', '$date', '$post_url', '$propix')";
     $res = query($sql);
 
@@ -576,8 +579,10 @@ if(isset($_POST['ptit']) && isset($_POST['pdet'])) {
 	$_SESSION['prl'] = $post_url;
 
     //redirect to upload image
-    echo '<script>window.location.href ="./writepix"</script>';
-}
+     echo $_SESSION['det'] = $details;
+    //echo "Loading... Please wait";
+  // echo '<script>window.location.href ="../test"</script>';
+
 }
 
 

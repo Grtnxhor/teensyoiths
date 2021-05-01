@@ -78,13 +78,8 @@
                   }
 
                     $det = $row['details'];
-                    $z = str_word_count($det);
-                   
-                     if($z <= 3000) {
-
-                      $y = substr($det,0,strpos($det,' ',350)) . " ...";
-
-                    }
+                    $frv = wordwrap($det, 35, "<br>\n", TRUE); 
+                    $y = substr($frv, 0, 100).'... ';
                 ?>
 					<div class="col-md-4">
 						<div class="blog-entry">
@@ -98,7 +93,7 @@
 								</p>
 								<h2><a href="<?php echo $row['post_url']; ?>"><?php echo $row['title']; ?></a></h2>
                 
-								<p><?php echo $y; ?> ...</p>
+								<p class="col-md-4"><?php echo $y; ?></p>
 								<br/>
 								<div><a href="<?php echo $row['post_url']; ?>"><button class="btn btn-primary">Read More</button></a></div>
 							</div>
@@ -141,14 +136,9 @@
 
                   }
 
-                    $det = $row['details'];
-                    $z = str_word_count($det);
-                   
-                     if($z <= 3000) {
-
-                      $y = substr($det,0,strpos($det,' ',350)) . " ...";
-
-                    }
+                  $det = $row['details'];
+                    $frv = wordwrap($det, 35, "<br>\n", TRUE); 
+                    $y = substr($frv, 0, 100).'... ';
                 ?>
                 	<div class="col-md-8">
 						<div class="blog-entry">
@@ -218,13 +208,9 @@
                   	$b = 'artfile/dp/'.$row['propix'];
 
                   }
-                    $z = str_word_count($det);
-                   
-                     if($z <= 3000) {
-
-                      $y = substr($det,0,strpos($det,' ',350)) . " ...";
-
-                    }
+                    $det = $row['details'];
+                    $frv = wordwrap($det, 35, "<br>\n", TRUE); 
+                    $y = substr($frv, 0, 100).'... ';
                 ?>
 					<div class="col-md-4">
 						
@@ -280,14 +266,9 @@
 
                   }
                   
-                   $z = str_word_count($det);
-                   
-                     if($z <= 3000) {
-
-                      $y = substr($det,0,strpos($det,' ',350)) . " ...";
-
-                    }
-
+                   $det = $row['details'];
+                    $frv = wordwrap($det, 35, "<br>\n", TRUE); 
+                    $y = substr($frv, 0, 100).'... ';
 
                 ?>
 					<div class="col-md-4">
