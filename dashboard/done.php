@@ -94,20 +94,6 @@ include("functions/top.php");
 <script src="plugins/summernote/summernote-bs4.min.js"></script>
 <!-- overlayScrollbars -->
 <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-<script>
-  $(function () {
-    // Summernote
-    $('.textarea').summernote({
- toolbar: [
-    // [groupName, [list of button]]
-    ['style', ['bold', 'italic', 'underline', 'clear']],
-    ['font', ['strikethrough', 'superscript', 'subscript']],
-    ['fontname', ['fontname']],
-    ['fontsize', ['fontsize']]
-  ]
-    });
-  })
-</script>
 <script src="../ajax.js"></script>
 <!-- bs-custom-file-input -->
 <script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>

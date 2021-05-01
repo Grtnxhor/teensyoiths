@@ -103,18 +103,18 @@ include("functions/top.php"); ?>
 <script src="dist/js/demo.js"></script>
 <!-- Summernote -->
 <script src="plugins/summernote/summernote-bs4.min.js"></script>
-<script>
+<!--<script>
   $(function () {
     // Summernote
-    $('.textarea').summernote({
+    $('.textarea').summernote("code", text.substring(0,10){
 
  toolbar: [
     // [groupName, [list of button]]
-    ['style', ['bold', 'italic', 'underline', 'clear']]
+    ['style', ['bold', 'italic']]
   ]
-    });
+    }) ;
   })
-</script>
+</script>--->
 <script src="../ajax.js"></script>
 </body>
 </html>

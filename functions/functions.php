@@ -571,9 +571,9 @@ if(isset($_POST['ptit']) && isset($_POST['pdet'])) {
     }
 
     //insert details into db
-   $sql = "INSERT INTO article(`sn`, `details`, `title`, `author`, `author_mail`, `view`, `datepost`, `post_url` , `propix`)";
+  /* $sql = "INSERT INTO article(`sn`, `details`, `title`, `author`, `author_mail`, `view`, `datepost`, `post_url` , `propix`)";
     $sql.= "VALUES('1', '$details', '$title', '$author', '$authormail', '0', '$date', '$post_url', '$propix')";
-    $res = query($sql);
+    $res = query($sql);*/
 
 
 	$_SESSION['prl'] = $post_url;
