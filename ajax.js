@@ -348,7 +348,7 @@ $("#exampleModalCenter").modal();
         },
       });
     }
-    $("#exampleModalCenter").modal();
+    $("#exampleModalCenter").modal({backdrop: "static"});
   });
 
 

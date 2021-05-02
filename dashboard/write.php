@@ -88,7 +88,7 @@ include("functions/top.php"); ?>
     <div class="modal-dialog" role="document">
         <div style="background: #f9f9ff; color: #ff0000;" class="modal-content">
             <div class="modal-body">
-                <div id="msg" class="text-center"></div>
+                <div id="msg" class="text-center">Loading.. Make sure you have a strong internet connection</div>
             </div>
         </div>
     </div>
