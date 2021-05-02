@@ -581,7 +581,7 @@ if(isset($_POST['ptit']) && isset($_POST['pdet'])) {
     //redirect to upload image
      //echo  $details;
     echo "Loading... Please wait";
-  echo '<script>window.location.href ="./writepix"</script>';
+  echo '<script>window.location.href ="	./writepix"</script>';
 
 }
 
@@ -609,6 +609,8 @@ if (!empty($_FILES["fle"]["name"])) {
 			   echo "Sorry, your ads image was not uploaded.";
 			// if everything is ok, try to upload file
 			} else {
+
+				echo 'Loading.. Please wait';
 			   
 			   move_uploaded_file($_FILES["fle"]["tmp_name"], $targetFilePath);
 			   img_ads($target_file);
