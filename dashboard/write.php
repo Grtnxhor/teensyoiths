@@ -49,7 +49,7 @@ include("functions/top.php"); ?>
                       <!-- textarea -->
                       <div class="form-group">
                         <label>Article Details</label>
-                         <textarea class="textarea" id="pdet"  data-parsley-pattern="/<\s*((p|span|ul|li|i|u|b)1?)[>]*\s*>/" placeholder="Place some text here"
+                         <textarea style="white-space: pre-wrap;" class="textarea" id="pdet"  data-parsley-pattern="/<\s*((p|span|ul|li|i|u|b)1?)[>]*\s*>/" placeholder="Place some text here"
                           style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                       </div>
                     </div>
@@ -103,18 +103,18 @@ include("functions/top.php"); ?>
 <script src="dist/js/demo.js"></script>
 <!-- Summernote -->
 <script src="plugins/summernote/summernote-bs4.min.js"></script>
-<!--<script>
+<script>
   $(function () {
     // Summernote
-    $('.textarea').summernote("code", text.substring(0,10){
+    $('.textarea').summernote({
 
- toolbar: [
+   toolbar: [
     // [groupName, [list of button]]
     ['style', ['bold', 'italic']]
   ]
-    }) ;
+    });
   })
-</script>--->
+</script>
 <script src="../ajax.js"></script>
 </body>
 </html>

@@ -77,7 +77,7 @@
 
                   }
 
-                    $det = $row['details'];
+                   $det = strip_tags($row['details']);
                     $frv = wordwrap($det, 35, "<br>\n", TRUE); 
                     $y = substr($frv, 0, 100).'... ';
                 ?>
@@ -93,9 +93,9 @@
 								</p>
 								<h2><a href="<?php echo $row['post_url']; ?>"><?php echo $row['title']; ?></a></h2>
                 
-								<p class="col-md-4"><?php echo $y; ?></p>
+								<p><?php echo $y; ?></p>
 								<br/>
-								<div><a href="<?php echo $row['post_url']; ?>"><button class="btn btn-primary">Read More</button></a></div>
+								<div><a href="<?php echo $row['post_url']; ?>"><button class="btn btn-primary">Read Now</button></a></div>
 							</div>
 						</div>
 					</div>
@@ -135,8 +135,7 @@
                   	$b = 'artfile/dp/'.$row['propix'];
 
                   }
-
-                  $det = $row['details'];
+                    $det = strip_tags($row['details']);
                     $frv = wordwrap($det, 35, "<br>\n", TRUE); 
                     $y = substr($frv, 0, 100).'... ';
                 ?>
@@ -208,7 +207,7 @@
                   	$b = 'artfile/dp/'.$row['propix'];
 
                   }
-                    $det = $row['details'];
+                    $det = strip_tags($row['details']);
                     $frv = wordwrap($det, 35, "<br>\n", TRUE); 
                     $y = substr($frv, 0, 100).'... ';
                 ?>
@@ -266,7 +265,7 @@
 
                   }
                   
-                   $det = $row['details'];
+                    $det = strip_tags($row['details']);
                     $frv = wordwrap($det, 35, "<br>\n", TRUE); 
                     $y = substr($frv, 0, 100).'... ';
 

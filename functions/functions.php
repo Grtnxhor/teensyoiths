@@ -531,7 +531,7 @@ function img_prod($target_file) {
 //post article first step
 if(isset($_POST['ptit']) && isset($_POST['pdet'])) {
 
-	$title 		= clean(escape($_POST['ptit']));
+	$title 		= $_POST['ptit'];
 	$details    = $_POST['pdet'];  
 
 
@@ -571,17 +571,17 @@ if(isset($_POST['ptit']) && isset($_POST['pdet'])) {
     }
 
     //insert details into db
-  /* $sql = "INSERT INTO article(`sn`, `details`, `title`, `author`, `author_mail`, `view`, `datepost`, `post_url` , `propix`)";
+   $sql = "INSERT INTO article(`sn`, `details`, `title`, `author`, `author_mail`, `view`, `datepost`, `post_url` , `propix`)";
     $sql.= "VALUES('1', '$details', '$title', '$author', '$authormail', '0', '$date', '$post_url', '$propix')";
-    $res = query($sql);*/
+    $res = query($sql);
 
 
 	$_SESSION['prl'] = $post_url;
 
     //redirect to upload image
-     echo $_SESSION['det'] = $details;
-    //echo "Loading... Please wait";
-  // echo '<script>window.location.href ="../test"</script>';
+     //echo  $details;
+    echo "Loading... Please wait";
+  echo '<script>window.location.href ="../test"</script>';
 
 }
 

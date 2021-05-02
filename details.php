@@ -134,7 +134,7 @@ if (!isset($_GET['read'])) {
 										</p>
 										<h2><a href="#"><?php echo $row['title'] ?></a></h2>
 										
-										<p><?php echo wordwrap(nl2br($row['details']), 90, "<br>\n", TRUE); ?></p>
+										<p><?php echo $row['details']; ?></p>
 									
 										<ul class="colorlib-social-icons">
 								<li><a style="font-size: 20px;" href="#"><b>Share:</b></a></li>
