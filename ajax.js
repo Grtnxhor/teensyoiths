@@ -336,6 +336,9 @@ $("#exampleModalCenter").modal();
     if (files == null || files == "") {
       $("#msg").html("Kindly select a picture");
     } else {
+
+    	$('#msg').html("Loading... Make sure you have a strong internet access");
+    	
       $.ajax({
         type: "post",
         url: "../functions/init.php",
