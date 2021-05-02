@@ -337,8 +337,6 @@ $("#exampleModalCenter").modal();
       $("#msg").html("Kindly select a picture");
     } else {
 
-    	$('#msg').html("Loading... Do not leave this page untill file upload completely");
-
       $.ajax({
         type: "post",
         url: "../functions/init.php",

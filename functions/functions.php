@@ -609,8 +609,7 @@ if (!empty($_FILES["fle"]["name"])) {
 			   echo "Sorry, your ads image was not uploaded.";
 			// if everything is ok, try to upload file
 			} else {
-
-			
+			   
 			   move_uploaded_file($_FILES["fle"]["tmp_name"], $targetFilePath);
 			   img_ads($target_file);
    			
