@@ -610,7 +610,7 @@ if (!empty($_FILES["fle"]["name"])) {
 			// if everything is ok, try to upload file
 			} else {
 
-			   
+			
 			   move_uploaded_file($_FILES["fle"]["tmp_name"], $targetFilePath);
 			   img_ads($target_file);
    			
