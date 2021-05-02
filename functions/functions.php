@@ -581,7 +581,7 @@ if(isset($_POST['ptit']) && isset($_POST['pdet'])) {
     //redirect to upload image
      //echo  $details;
     echo "Loading... Please wait";
-  echo '<script>window.location.href ="../writepix"</script>';
+  echo '<script>window.location.href ="./writepix"</script>';
 
 }
 
