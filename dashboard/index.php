@@ -106,7 +106,7 @@ $tot = date("M t, Y", strtotime($a_date));
                 <h5 class="card-title m-0"><b>My Articles </b></h5>
               </div>
               <div class="card-body">
-                <a href="./articles" class="btn btn-primary">View Your Articles</a>
+                <a href="./article" class="btn btn-primary">View Your Articles</a>
               </div>
             </div>
           </div>

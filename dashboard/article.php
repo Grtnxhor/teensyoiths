@@ -32,9 +32,11 @@ $row = mysqli_fetch_array($res);
             <div class="card-header">
               <h3 class="card-title"></h3>
                <div class="card-tools">
-                  <button type="button" onclick="window.print();" id="prin" data-toggle="tooltip" title="Print Result" class="btn btn-tool"><i class="fas fa-edit"></i>
+                  <button type="button" id="edit" data-toggle="modal" data-target="#modal-edit"
+                            data-toggle="tooltip" title="Edit a question" class="btn btn-tool"><i class="fas fa-edit"></i>
                   </button>
-                  <button type="button" data-toggle="tooltip" title="Maximize" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-trash"></i>
+                  <button type="button"  id="del" data-toggle="modal" data-target="#modal-delete"
+                            data-toggle="tooltip" title="Delete a question" class="btn btn-tool"><i class="fas fa-trash"></i>
                   </button>
                     <button type="button" data-toggle="tooltip" title="Minimize" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i>
                   </button>
@@ -42,7 +44,7 @@ $row = mysqli_fetch_array($res);
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="example1" class="table table-bordered table-striped">
+              <table id="example1" class="table table-bordered table-responsive table-striped">
                 <thead>
                 <tr>
                   <th>Article</th>
@@ -101,89 +103,142 @@ $author = $_SESSION['Username'];
 </div>
 <!-- ./wrapper -->
 
+<!---modal delete--->
+<div class="modal fade" id="modal-delete">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-danger">
+            <div class="modal-header">
+                <h4 class="modal-title">Delete an Article <span id="msg"></span></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body">
+                    <p class="text-grey">Kindly confirm the article you want to delete by selecting from the list of articles below</p>
+
+                    <form name="deleting">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Article</span>
+                            </div>
+                             <select name="delsn" id="delsn" class="form-control">
+                                           <?php
+$author = $_SESSION['Username'];             
+ $sql="SELECT * from `article` WHERE `author` = '$author'";
+ $result_set = query($sql);
+ while($row = mysqli_fetch_array($result_set))
+ {
+  if(row_count($result_set) == "") {
+
+           echo  "<p style='color:red;'>No Record Found</p>";
+            
+          } else {
+                              ?>
+                                <option name="delsn" id="delsn"><?php echo $row['post_url'] ?></option>
+                                <?php
+                              }
+                            }
+                                ?>
+                            </select>
+      
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+                <button type="button" id="movedel" class="btn btn-outline-light">Continue</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter">
+    <div class="modal-dialog" role="document">
+        <div style="background: #f9f9ff; color: #ff0000;" class="modal-content">
+            <div class="modal-body">
+                <div id="msg" class="text-center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!---modal delete--->
+<div class="modal fade" id="modal-edit">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-info">
+            <div class="modal-header">
+                <h4 class="modal-title">Edit an Article <span id="msg"></span></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body">
+                    <p class="text-grey">Kindly confirm the article you wish to edit by selecting from the list of articles below</p>
+
+                    <form name="deleting">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Article</span>
+                            </div>
+                             <select name="eddelsn" id="eddelsn" class="form-control">
+                                           <?php
+$author = $_SESSION['Username'];             
+ $sql="SELECT * from `article` WHERE `author` = '$author'";
+ $result_set = query($sql);
+ while($row = mysqli_fetch_array($result_set))
+ {
+  if(row_count($result_set) == "") {
+
+           echo  "<p style='color:red;'>No Record Found</p>";
+            
+          } else {
+                              ?>
+                                <option name="eddelsn" id="delsn"><?php echo $row['post_url'] ?></option>
+                                <?php
+                              }
+                            }
+                                ?>
+                            </select>
+      
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+                <button type="button" id="edmovedel" class="btn btn-outline-light">Continue</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
 
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-$.widget.bridge('uibutton', $.ui.button)
-</script>
 <!-- Bootstrap 4 -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- ChartJS -->
-<script src="plugins/chart.js/Chart.min.js"></script>
-<!-- Sparkline -->
-<script src="plugins/sparklines/sparkline.js"></script>
-<!-- JQVMap -->
-<script src="plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="plugins/jquery-knob/jquery.knob.min.js"></script>
-<!-- daterangepicker -->
-<script src="plugins/moment/moment.min.js"></script>
-<script src="plugins/daterangepicker/daterangepicker.js"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<!-- Summernote -->
-<script src="plugins/summernote/summernote-bs4.min.js"></script>
+<!-- bs-custom-file-input -->
+<script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
 <!-- overlayScrollbars -->
 <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard.js"></script>
-<script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<script src="../ajax.js"></script>
 <script type="text/javascript">
-$(document).ready(function() {
-    bsCustomFileInput.init();
+$(document).ready(function () {
+  bsCustomFileInput.init();
 });
 </script>
-<script src="ajax.js"></script>
-<!-- SweetAlert2 -->
-<script src="plugins/sweetalert2/sweetalert2.min.js"></script>
-<!-- Toastr -->
-<script src="plugins/toastr/toastr.min.js"></script>
-<script type="text/javascript">
-$(function() {
-    const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 3000
-    });
-});
-</script>
-  <script>
-    //filter
-    document.getElementById('chkres').addEventListener('click', getResult);
-
-    function getResult()
-    {
-      var x = document.forms["printres"]["clss"].value;
-      var y = document.forms["printres"]["ressbj"].value;
-      if (y == null || y == "") {
-    $(toastr.error('Please select a term'));
-        return false;
-    }
-      var xhr = new  XMLHttpRequest();
-      xhr.open('GET', './result?id='+x+'&other='+y, true);
-
-      xhr.onload = function ()
-      {
-        if (xhr.status == 200) {
-          //document.write(this.responseText);
-          document.getElementById('displayres').innerHTML=xhr.responseText;
-        } else {
-
-          document.write('File not Found');
-        }
-      }
-
-      xhr.send();
-    }
-  </script>
 
 </body>
 

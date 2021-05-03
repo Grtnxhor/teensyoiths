@@ -350,8 +350,125 @@ $("#exampleModalCenter").modal();
         },
       });
     }
-    $("#exampleModalCenter").modal({backdrop: "static"});
+    $("#exampleModalCenter").modal();
   });
+
+
+
+//ed upload post article
+  $("#edpstupl").click(function () {
+    var fd = new FormData();
+    var files = $("#edpsfile").prop("files")[0];
+    fd.append("edfle", files);
+
+    if (files == null || files == "") {
+      $("#msg").html("Kindly select a picture");
+    } else {
+
+    	 $("#msg").html("Loading.. Make sure you have a strong internet connection");
+
+      $.ajax({
+        type: "post",
+        url: "../functions/init.php",
+        data: fd,
+        contentType: false,
+        processData: false,
+        success: function (data) {
+          $("#msg").html(data);
+        },
+      });
+    }
+    $("#exampleModalCenter").modal();
+  });
+
+
+
+
+
+
+
+  //Delete article
+	$("#movedel").click(function() 
+	{
+
+	var delsn    = $("#delsn").val();
+
+		$('#msg').html("Loading... Please wait");
+
+		$.ajax
+    (
+    {
+        type        :  'post',
+        url         :  '../functions/init.php',
+        data        :  {delsn:delsn},
+        success     :  function(data)
+        {
+            $('#msg').html(data);
+        }
+    }
+        )
+
+
+	$("#exampleModalCenter").modal();
+})
+
+
+
+//edit an article move
+$("#edmovedel").click(function() 
+	{
+
+	var eddelsn    = $("#eddelsn").val();
+
+		$('#msg').html("Loading... Please wait");
+
+		window.location.href = "eawrite?id="+eddelsn;
+
+	$("#exampleModalCenter").modal();
+})
+
+
+
+ //Edit article first step
+	$("#svpart").click(function() 
+	{
+
+	var svptit    = $("#svptit").val();
+	var svpdet    = $('#svpdet').val();
+	var datat     = $('#datat').val();
+
+
+	if (svptit == null || svptit == "") {
+
+		$('#msg').html("Article title is empty");
+	} else {
+
+	if (svpdet == null || svpdet == "") {
+
+		$('#msg').html("Article details can`t be empty");
+	} else {
+
+
+		$('#msg').html("Loading... Please wait");
+
+		$.ajax
+    (
+    {
+        type        :  'post',
+        url         :  '../functions/init.php',
+        data        :  {svptit:svptit,svpdet:svpdet,datat:datat},
+        success     :  function(data)
+        {
+            $('#msg').html(data);
+        }
+    }
+        )
+
+	}
+}
+
+	$("#exampleModalCenter").modal();
+})
 
 
 })	

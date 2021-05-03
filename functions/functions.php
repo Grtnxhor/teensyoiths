@@ -548,6 +548,10 @@ if(isset($_POST['ptit']) && isset($_POST['pdet'])) {
     $authormail = $_SESSION['user'];
     $post_url   = str_replace(' ', '-', $title);
 
+    //get last date
+    $a_date = date("M d, Y");
+    $tot = date("M t, Y", strtotime($a_date));
+
     //get user profile
     $fred = "SELECT * FROM user WHERE `email` = '$authormail'";
     $trd  = query($fred);
@@ -571,8 +575,8 @@ if(isset($_POST['ptit']) && isset($_POST['pdet'])) {
     }
 
     //insert details into db
-   $sql = "INSERT INTO article(`sn`, `details`, `title`, `author`, `author_mail`, `view`, `datepost`, `post_url` , `propix`)";
-    $sql.= "VALUES('1', '$details', '$title', '$author', '$authormail', '0', '$date', '$post_url', '$propix')";
+   $sql = "INSERT INTO article(`sn`, `details`, `title`, `author`, `author_mail`, `view`, `datepost`, `post_url` , `propix`, `totview`, `lastdate`)";
+    $sql.= "VALUES('1', '$details', '$title', '$author', '$authormail', '0', '$date', '$post_url', '$propix', '0', '$tot')";
     $res = query($sql);
 
 
@@ -584,6 +588,42 @@ if(isset($_POST['ptit']) && isset($_POST['pdet'])) {
   echo '<script>window.location.href ="	./writepix"</script>';
 
 }
+
+
+
+
+
+
+//edit article first step
+if(isset($_POST['svptit']) && isset($_POST['svpdet']) && isset($_POST['datat'])) {
+
+	$title 		= $_POST['svptit'];
+	$details    = $_POST['svpdet']; 
+	$data 		= $_POST['datat']; 
+
+
+	//echo $details;
+
+	/*if(str_word_count($details) > 3000) {
+
+		echo "Your article can not be greater than 3,000 words";
+	} else {*/
+
+	
+    //update details into db
+   $sql = "UPDATE  article SET `title` = '$title', `details` = '$details' WHERE `post_url` = '$data'";
+   $res = query($sql);
+
+
+	$_SESSION['prl'] = $data;
+
+    //redirect to upload image
+     //echo  $details;
+    echo "Loading... Please wait";
+  echo '<script>window.location.href ="	./upwritepix"</script>';
+
+}
+
 
 
 
@@ -631,4 +671,82 @@ function img_ads($target_file) {
 	echo '<script>window.location.href ="./done"</script>';
 
 }
+
+
+
+
+
+//edupload post picture
+if (!empty($_FILES["edfle"]["name"])) {
+	
+			$target_dir = "../artfile/";
+			$target_file =  basename($_FILES["edfle"]["name"]);
+			$targetFilePath = $target_dir . $target_file;
+			$uploadOk = 1;
+			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+	
+			
+			// Allow certain file formats
+			if($imageFileType != "jpg" && $imageFileType != "jpeg") {
+			    echo "Sorry, only JPG and JPEG files are allowed.";
+			    $uploadOk = 0;
+			} else {
+			// Check if $uploadOk is set to 0 by an error
+			if ($uploadOk == 0) {
+			   echo "Sorry, your ads image was not uploaded.";
+			// if everything is ok, try to upload file
+			} else {
+			   
+			   move_uploaded_file($_FILES["edfle"]["tmp_name"], $targetFilePath);
+			   edimg_ads($target_file);
+   			
+		
+	}	    	
+}
+}
+
+
+///sql update eds image
+function edimg_ads($target_file) {
+
+	$code     = $_SESSION['prl'];
+
+	$sql 	  = "UPDATE article SET `pix` = '$target_file' WHERE `post_url` = '$code'";
+	$res 	  = query($sql);
+
+	echo 'Loading.. Please wait';
+	echo '<script>window.location.href ="./eddone"</script>';
+
+}
+
+
+
+
+
+//delete article
+if (isset($_POST['delsn'])) {
+
+	$author = $_SESSION['Username'];
+	$pid    = $_POST['delsn'];
+
+	 $sql="SELECT * from `article` WHERE `author` = '$author' AND `post_url` = '$pid'";
+	 $result_set = query($sql);
+	 $row = mysqli_fetch_array($result_set);
+	 
+	  if(row_count($result_set) == "") {
+
+	   echo  "<p style='color:red;'>No Record Found</p>";
+	    
+	  } else {
+
+	  	$sml = "DELETE FROM article WHERE `author` = '$author' AND `post_url` = '$pid'";
+	  	$rml = query($sml);
+
+	  	echo "Article Deleted Successfully";
+	  	echo '<script>window.location.href ="./article"</script>';
+	  }
+
+}
+
+
 ?>
