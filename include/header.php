@@ -35,13 +35,18 @@ while($row = mysqli_fetch_array($res)) {
 <html>
 
 <head>
-    <title>TeensYouth</title>
-     <meta charset="UTF-8">
-    <meta name="description" content="Let the revolution begin...">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TeensYouths</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">   
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Title -->
-    <title>TeensYouth</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="TeensYouths - Join the Gen-X Revolution">
+    <meta name="keywords" content="TeensYouths - Join the Gen-X Revolution">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="theme-color" content="#f9f9ff"> 
 
     <!-- Favicon -->
     <link rel="icon" href="images/2.png">
@@ -79,6 +84,8 @@ while($row = mysqli_fetch_array($res)) {
     <!-- Theme style  -->
     <link rel="stylesheet" href="css/style.css">
 
+     <link rel="manifest" href="manifest.json">
+
     <!-- Modernizr JS -->
     <script src="js/modernizr-2.6.2.min.js"></script>
     <!-- FOR IE9 below -->
@@ -105,6 +112,7 @@ while($row = mysqli_fetch_array($res)) {
                                  <li><a href="./about">About Us</a></li>
                                 <li><a href="./articles">Articles</a></li>
                                 <li><a href="dashboard/./write">Write an Article</a></li>
+                                 <li><a href="./faqs">FAQs</a></li>
                                 <?php
 if(!isset($_SESSION['user']) && !isset($_SESSION['Username'])) {          
 ?>
@@ -114,7 +122,7 @@ if(!isset($_SESSION['user']) && !isset($_SESSION['Username'])) {
                                 echo '<li><a style="color:red;" href="dashboard/./"><b>My DashBoard</b></a></li> ';
                                 }                          
                                ?>                               
-                            <li><a href="./signin">Sign In</a></li>
+                           
                             </ul>
                         </div>
                     </div>

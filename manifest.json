@@ -1,0 +1,23 @@
+{
+  "short_name": "TeensYouth",
+  "name": "TeensYouths",
+  "description": "Join the Gen-X Revolution",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "images/2.jpg",
+      "type": "image/png",
+      "sizes": "144x144"
+    }
+  ],
+  "start_url": "./?v3&utm_source=web_app_manifest",
+  "background_color": "#f9f9ff",
+  "theme_color": "#f9f9ff",
+  "color": "#F6490D",
+  "display": "standalone",
+  "orientation": "portrait",
+  "related_applications": [{
+    "platform": "web",
+    "url": "https://teensyouths.com.ng"
+  }]
+}
