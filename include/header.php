@@ -37,7 +37,7 @@ while($row = mysqli_fetch_array($res)) {
 <head>
     <title>TeensYouths</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">   
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="UTF-8">
@@ -46,7 +46,7 @@ while($row = mysqli_fetch_array($res)) {
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <meta name="theme-color" content="#f9f9ff"> 
+    <meta name="theme-color" content="#f9f9ff">
 
     <!-- Favicon -->
     <link rel="icon" href="images/2.png">
@@ -84,7 +84,7 @@ while($row = mysqli_fetch_array($res)) {
     <!-- Theme style  -->
     <link rel="stylesheet" href="css/style.css">
 
-     <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="manifest.json">
 
     <!-- Modernizr JS -->
     <script src="js/modernizr-2.6.2.min.js"></script>
@@ -104,25 +104,28 @@ while($row = mysqli_fetch_array($res)) {
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-2">
-                            <div id="colorlib-logo"><img src="images/2.png" alt="TeensYouths" width="120px" height="60px"></div>
+                            <div id="colorlib-logo"><img src="images/2.png" alt="TeensYouths" width="120px"
+                                    height="60px"></div>
                         </div>
                         <div class="col-xs-10 text-right menu-1">
                             <ul>
                                 <li><a href="./">Home</a></li>
-                                 <li><a href="./about">About Us</a></li>
+                                <li><a href="./about">About Us</a></li>
                                 <li><a href="./articles">Articles</a></li>
                                 <li><a href="dashboard/./write">Write an Article</a></li>
-                                 <li><a href="./faqs">FAQs</a></li>
+                                <li><a href="dashboard/./write">Past Winners</a></li>
+                                <li><a href="./pastquestions">Past Questions</a></li>
+                                <li><a href="./faqs">FAQs</a></li>
                                 <?php
 if(!isset($_SESSION['user']) && !isset($_SESSION['Username'])) {          
 ?>
-                                <li><a href="./signup">Create a free account</a></li> 
+                                <li><a href="./signup">Signup</a></li>
                                 <?php
                                 } else {
                                 echo '<li><a style="color:red;" href="dashboard/./"><b>My DashBoard</b></a></li> ';
                                 }                          
-                               ?>                               
-                           
+                               ?>
+
                             </ul>
                         </div>
                     </div>
