@@ -114,7 +114,7 @@ while($row = mysqli_fetch_array($res)) {
                                 <li><a href="./articles">Articles</a></li>
                                 <li><a href="dashboard/./write">Write an Article</a></li>
                                 <li><a href="dashboard/./write">Past Winners</a></li>
-                                <li><a href="./pastquestions">Past Questions</a></li>
+                                <li><a href="./freebies">Freebies</a></li>
                                 <li><a href="./faqs">FAQs</a></li>
                                 <?php
 if(!isset($_SESSION['user']) && !isset($_SESSION['Username'])) {          
