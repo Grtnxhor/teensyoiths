@@ -14,7 +14,7 @@
                 <h2><b>DOWNLOAD 2021 JAMB PAST QUESTIONS</b></h2>
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="thumbnail">
+                        <div name="account" class="thumbnail">
                             <a href="JAMB PAST QUESTIONS/JAMB-ACCOUNTS-PAST-QUESTIONS.pdf" target="_blank">
                                 <img src="images/9.jpeg" alt="Lights" style="width:100%">
                                 <div class="caption">
@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="thumbnail">
+                        <div id="biology" class="thumbnail">
                             <a href="JAMB PAST QUESTIONS/JAMB-BIOLOGY-PAST-QUESTIONS.pdf" target="_blank">
                                 <img src="images/9.jpeg" alt="Lights" style="width:100%">
                                 <div class="caption">
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="thumbnail">
+                        <div id="chemistry" class="thumbnail">
                             <a href="JAMB PAST QUESTIONS/JAMB-CHEMISTRY-PAST-QUESTIONS.pdf" target="_blank">
                                 <img src="images/9.jpeg" alt="Lights" style="width:100%">
                                 <div class="caption">
@@ -45,7 +45,7 @@
                     </div>
 
                     <div class="col-md-4">
-                        <div class="thumbnail">
+                        <div id="commerce" class="thumbnail">
                             <a href="JAMB PAST QUESTIONS/JAMB-COMMERCE-PAST-QUESTIONS.pdf" target="_blank">
                                 <img src="images/9.jpeg" alt="Lights" style="width:100%">
                                 <div class="caption">
@@ -55,7 +55,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="thumbnail">
+                        <div id="crk" class="thumbnail">
                             <a href="JAMB PAST QUESTIONS/JAMB-CRK-PAST-QUESTIONS.pdf" target="_blank">
                                 <img src="images/9.jpeg" alt="Lights" style="width:100%">
                                 <div class="caption">
@@ -65,7 +65,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="thumbnail">
+                        <div id="economics" class="thumbnail">
                             <a href="JAMB PAST QUESTIONS/JAMB-ECONOMICS-PAST-QUESTIONS.pdf" target="_blank">
                                 <img src="images/9.jpeg" alt="Lights" style="width:100%">
                                 <div class="caption">
@@ -75,7 +75,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="thumbnail">
+                        <div id="english" class="thumbnail">
                             <a href="JAMB PAST QUESTIONS/JAMB-LIT-IN-ENGLISH-PAST-QUESTIONS.pdf" target="_blank">
                                 <img src="images/9.jpeg" alt="Lights" style="width:100%">
                                 <div class="caption">
@@ -85,7 +85,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="thumbnail">
+                        <div id="maths" class="thumbnail">
                             <a href="JAMB PAST QUESTIONS/JAMB-MATHEMATICS-PAST-QUESTIONS.pdf" target="_blank">
                                 <img src="images/9.jpeg" alt="Lights" style="width:100%">
                                 <div class="caption">
@@ -95,7 +95,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="thumbnail">
+                        <div id="phy" class="thumbnail">
                             <a href="JAMB PAST QUESTIONS/JAMB-PHYSICS-PAST-QUESTIONS.pdf" target="_blank">
                                 <img src="images/9.jpeg" alt="Lights" style="width:100%">
                                 <div class="caption">
@@ -107,7 +107,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="thumbnail">
+                        <div id="english" class="thumbnail">
                             <a href="JAMB PAST QUESTIONS/JAMB-USE-OF-ENGLISH-PAST-QUESTIONS.pdf" target="_blank">
                                 <img src="images/9.jpeg" alt="Lights" style="width:100%">
                                 <div class="caption">
@@ -117,7 +117,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="thumbnail">
+                        <div id="lifechange" class="thumbnail">
                             <a href="JAMB PAST QUESTIONS/QAs-from-THE-LIFE-CHANGER-1.pdf" target="_blank">
                                 <img src="images/9.jpeg" alt="Lights" style="width:100%">
                                 <div class="caption">
@@ -153,10 +153,10 @@
                     </div>
                     <div class="col-md-4">
                         <div class="thumbnail">
-                            <a href="JAMB PAST QUESTIONS/laugh for christ's sake 5.5 by 8.5.pdf" target="_blank">
+                            <a href="JAMB PAST QUESTIONS/Laugh For God's Sake.pdf" target="_blank">
                                 <img src="images/9.jpeg" alt="Lights" style="width:100%">
                                 <div class="caption">
-                                    <p>laugh for christ's sake 5.5 by 8.5</p>
+                                    <p>Laugh For God's Sake: A Collection of Clean Joke</p>
                                 </div>
                             </a>
                         </div>
@@ -221,6 +221,18 @@
 <script src="js/magnific-popup-options.js"></script>
 <!-- Main -->
 <script src="js/main.js"></script>
+
+
+<!---getting count link ----->
+<script>
+//account
+var a = document.getElementById("account"),
+    count = <?php echo 1 ?>;
+a.onclick = function() {
+    count += 1;
+    demo.innerHTML = count;
+};
+</script>
 
 </body>
 
