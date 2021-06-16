@@ -132,6 +132,71 @@
     </div>
 </div>
 
+<div id="colorlib-container">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6">
+                <br />
+                <h2><b>MORE FREEBIES TO ENJOY DURING YOUR LEISURE</b></h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <a href="JAMB PAST QUESTIONS/The Nude Lady & The Free Gift - A Short Story.pdf"
+                                target="_blank">
+                                <img src="images/9.jpeg" alt="Lights" style="width:100%">
+                                <div class="caption">
+                                    <p>The Nude Lady & The Free Gift - A Short Story</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <a href="JAMB PAST QUESTIONS/laugh for christ's sake 5.5 by 8.5.pdf" target="_blank">
+                                <img src="images/9.jpeg" alt="Lights" style="width:100%">
+                                <div class="caption">
+                                    <p>laugh for christ's sake 5.5 by 8.5</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <a href="JAMB PAST QUESTIONS/Words on Marble 1 by Sam O Salau.pdf" target="_blank">
+                                <img src="images/9.jpeg" alt="Lights" style="width:100%">
+                                <div class="caption">
+                                    <p>Words on Marble 1 by Sam O Salau</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <a href="JAMB PAST QUESTIONS/Words on Marble 2 by Sam O Salau.pdf" target="_blank">
+                                <img src="images/9.jpeg" alt="Lights" style="width:100%">
+                                <div class="caption">
+                                    <p>Words on Marble 2 by Sam O Salau</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6 float-right">
+                <img class="img-responsive" src="images/10.jpg" alt="">
+            </div>
+
+        </div>
+    </div>
+</div>
+
 <?php include("include/footer.php"); ?>
 </div>
 
