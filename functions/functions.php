@@ -748,5 +748,308 @@ if (isset($_POST['delsn'])) {
 
 }
 
+//---------------- link count ---------------------//
 
+//account update
+ if (isset($_POST['act'])) {
+
+	//grab the id of the link clicked or check if the link is clicked
+	$sql = "SELECT * FROM `linkcount` WHERE `link` = 'account'";
+	$rsl = query($sql);
+	$row = mysqli_fetch_array($rsl);
+
+	//get previous value 
+	$a = $row['count'];
+	
+	//add 1 to it 
+	$b = $a + 1;
+
+	//update final value
+	$ssl = "UPDATE `linkcount` SET `count` = '$b' WHERE `link` = 'account'";
+	$res = query($ssl);
+
+	echo $b;
+	
+}
+
+if(isset($_POST['biology'])) {
+
+	//grab the id of the link clicked or check if the link is clicked
+	$sql = "SELECT * FROM `linkcount` WHERE `link` = 'biology'";
+	$rsl = query($sql);
+	$row = mysqli_fetch_array($rsl);
+
+	//get previous value 
+	$a = $row['count'];
+	
+	//add 1 to it 
+	$b = $a + 1;
+
+	//update final value
+	$ssl = "UPDATE `linkcount` SET `count` = '$b' WHERE `link` = 'biology'";
+	$res = query($ssl);
+
+	echo $b;
+	
+}
+if(isset($_POST['chemistry'])) {
+
+	//grab the id of the link clicked or check if the link is clicked
+	$sql = "SELECT * FROM `linkcount` WHERE `link` = 'chemistry'";
+	$rsl = query($sql);
+	$row = mysqli_fetch_array($rsl);
+
+	//get previous value 
+	$a = $row['count'];
+	
+	//add 1 to it 
+	$b = $a + 1;
+
+	//update final value
+	$ssl = "UPDATE `linkcount` SET `count` = '$b' WHERE `link` = 'chemistry'";
+	$res = query($ssl);
+
+	echo $b;
+	
+}
+if(isset($_POST['commerce'])) {
+
+	//grab the id of the link clicked or check if the link is clicked
+	$sql = "SELECT * FROM `linkcount` WHERE `link` = 'commerce'";
+	$rsl = query($sql);
+	$row = mysqli_fetch_array($rsl);
+
+	//get previous value 
+	$a = $row['count'];
+	
+	//add 1 to it 
+	$b = $a + 1;
+
+	//update final value
+	$ssl = "UPDATE `linkcount` SET `count` = '$b' WHERE `link` = 'commerce'";
+	$res = query($ssl);
+
+	echo $b;
+	
+}
+if(isset($_POST['crk'])) {
+
+	//grab the id of the link clicked or check if the link is clicked
+	$sql = "SELECT * FROM `linkcount` WHERE `link` = 'crk'";
+	$rsl = query($sql);
+	$row = mysqli_fetch_array($rsl);
+
+	//get previous value 
+	$a = $row['count'];
+	
+	//add 1 to it 
+	$b = $a + 1;
+
+	//update final value
+	$ssl = "UPDATE `linkcount` SET `count` = '$b' WHERE `link` = 'crk'";
+	$res = query($ssl);
+
+	echo $b;
+	
+}
+if(isset($_POST['economics'])) {
+
+	//grab the id of the link clicked or check if the link is clicked
+	$sql = "SELECT * FROM `linkcount` WHERE `link` = 'economics'";
+	$rsl = query($sql);
+	$row = mysqli_fetch_array($rsl);
+
+	//get previous value 
+	$a = $row['count'];
+	
+	//add 1 to it 
+	$b = $a + 1;
+
+	//update final value
+	$ssl = "UPDATE `linkcount` SET `count` = '$b' WHERE `link` = 'economics'";
+	$res = query($ssl);
+
+	echo $b;
+	
+}
+if(isset($_POST['english'])) {
+
+	//grab the id of the link clicked or check if the link is clicked
+	$sql = "SELECT * FROM `linkcount` WHERE `link` = 'english'";
+	$rsl = query($sql);
+	$row = mysqli_fetch_array($rsl);
+
+	//get previous value 
+	$a = $row['count'];
+	
+	//add 1 to it 
+	$b = $a + 1;
+
+	//update final value
+	$ssl = "UPDATE `linkcount` SET `count` = '$b' WHERE `link` = 'english'";
+	$res = query($ssl);
+
+	echo $b;
+	
+}
+if(isset($_POST['maths'])) {
+
+	//grab the id of the link clicked or check if the link is clicked
+	$sql = "SELECT * FROM `linkcount` WHERE `link` = 'maths'";
+	$rsl = query($sql);
+	$row = mysqli_fetch_array($rsl);
+
+	//get previous value 
+	$a = $row['count'];
+	
+	//add 1 to it 
+	$b = $a + 1;
+
+	//update final value
+	$ssl = "UPDATE `linkcount` SET `count` = '$b' WHERE `link` = 'maths'";
+	$res = query($ssl);
+
+	echo $b;
+	
+}
+if(isset($_POST['phy'])) {
+
+	//grab the id of the link clicked or check if the link is clicked
+	$sql = "SELECT * FROM `linkcount` WHERE `link` = 'phy'";
+	$rsl = query($sql);
+	$row = mysqli_fetch_array($rsl);
+
+	//get previous value 
+	$a = $row['count'];
+	
+	//add 1 to it 
+	$b = $a + 1;
+
+	//update final value
+	$ssl = "UPDATE `linkcount` SET `count` = '$b' WHERE `link` = 'phy'";
+	$res = query($ssl);
+
+	echo $b;
+	
+}
+if(isset($_POST['uoe'])){
+
+	//grab the id of the link clicked or check if the link is clicked
+	$sql = "SELECT * FROM `linkcount` WHERE `link` = 'uoe'";
+	$rsl = query($sql);
+	$row = mysqli_fetch_array($rsl);
+
+	//get previous value 
+	$a = $row['count'];
+	
+	//add 1 to it 
+	$b = $a + 1;
+
+	//update final value
+	$ssl = "UPDATE `linkcount` SET `count` = '$b' WHERE `link` = 'uoe'";
+	$res = query($ssl);
+
+	echo $b;
+	
+}
+if (isset($_POST['lifechange'])) {
+
+	//grab the id of the link clicked or check if the link is clicked
+	$sql = "SELECT * FROM `linkcount` WHERE `link` = 'lifechange'";
+	$rsl = query($sql);
+	$row = mysqli_fetch_array($rsl);
+
+	//get previous value 
+	$a = $row['count'];
+	
+	//add 1 to it 
+	$b = $a + 1;
+
+	//update final value
+	$ssl = "UPDATE `linkcount` SET `count` = '$b' WHERE `link` = 'lifechange'";
+	$res = query($ssl);
+
+	echo $b;
+	
+}
+if(isset($_POST['nude'])) {
+
+	//grab the id of the link clicked or check if the link is clicked
+	$sql = "SELECT * FROM `linkcount` WHERE `link` = 'nude'";
+	$rsl = query($sql);
+	$row = mysqli_fetch_array($rsl);
+
+	//get previous value 
+	$a = $row['count'];
+	
+	//add 1 to it 
+	$b = $a + 1;
+
+	//update final value
+	$ssl = "UPDATE `linkcount` SET `count` = '$b' WHERE `link` = 'nude'";
+	$res = query($ssl);
+
+	echo $b;
+	
+}
+if(isset($_POST['joke'])) {
+
+	//grab the id of the link clicked or check if the link is clicked
+	$sql = "SELECT * FROM `linkcount` WHERE `link` = 'joke'";
+	$rsl = query($sql);
+	$row = mysqli_fetch_array($rsl);
+
+	//get previous value 
+	$a = $row['count'];
+	
+	//add 1 to it 
+	$b = $a + 1;
+
+	//update final value
+	$ssl = "UPDATE `linkcount` SET `count` = '$b' WHERE `link` = 'joke'";
+	$res = query($ssl);
+
+	echo $b;
+	
+}
+if(isset($_POST['mb1'])) {
+
+	//grab the id of the link clicked or check if the link is clicked
+	$sql = "SELECT * FROM `linkcount` WHERE `link` = 'mb1'";
+	$rsl = query($sql);
+	$row = mysqli_fetch_array($rsl);
+
+	//get previous value 
+	$a = $row['count'];
+	
+	//add 1 to it 
+	$b = $a + 1;
+
+	//update final value
+	$ssl = "UPDATE `linkcount` SET `count` = '$b' WHERE `link` = 'mb1'";
+	$res = query($ssl);
+
+	echo $b;
+	
+}
+if(isset($_POST['mb2'])) {
+
+	//grab the id of the link clicked or check if the link is clicked
+	$sql = "SELECT * FROM `linkcount` WHERE `link` = 'mb2'";
+	$rsl = query($sql);
+	$row = mysqli_fetch_array($rsl);
+
+	//get previous value 
+	$a = $row['count'];
+	
+	//add 1 to it 
+	$b = $a + 1;
+
+	//update final value
+	$ssl = "UPDATE `linkcount` SET `count` = '$b' WHERE `link` = 'mb2'";
+	$res = query($ssl);
+
+	echo $b;
+	
+}
 ?>
