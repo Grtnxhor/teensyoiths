@@ -130,14 +130,19 @@ if (!isset($_GET['read'])) {
 
                             <div class="desc">
                                 <p class="meta">
-                                    <span class="cat"><a href="#"><?php echo $row['view'] ?><i
-                                                class="icon-eye"></i></a></span>
+
                                     <span
                                         class="date"><?php echo date('D, M d, Y', strtotime($row['datepost'])) ?></span>
                                     <span class="pos">By <a href="#"><?php echo $row['author'] ?></a></span>
                                 </p>
                                 <h2><a href="#"><?php echo $row['title'] ?></a></h2>
-
+                                <p class="meta">
+                                    <span style="text-transform: capitalize"><a href="<?php echo $row['post_url']; ?>">
+                                            <b>All
+                                                Time View:
+                                                <?php echo number_format($row['totview']); ?> | Monthly
+                                                View : <?php echo number_format($row['view']); ?> </b></a></span>
+                                </p>
                                 <p><?php echo $row['details']; ?></p>
 
                                 <ul class="colorlib-social-icons">
@@ -269,7 +274,8 @@ if (!isset($_GET['read'])) {
                                 <h3><a style="color: red;"
                                         href="<?php echo $row2['post_url']; ?>"><?php echo $row2['title']; ?></a></h3>
                                 <p class="admin">
-                                    <span><?php echo date('D, M d, Y ', strtotime($row2['datepost'])) ?></span></p>
+                                    <span><?php echo date('D, M d, Y ', strtotime($row2['datepost'])) ?></span>
+                                </p>
                             </div>
                         </div>
 
