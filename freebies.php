@@ -31,7 +31,7 @@
                                     $rsl = query($sql);
                                     $row = mysqli_fetch_array($rsl);
                                     ?>
-                                    <p><span id="act"><?php echo $row['count'] ?></span> Downloads</p>
+                                    <p><span id="act"><?php echo number_format($row['count']) ?></span> Downloads</p>
                                 </div>
                             </a>
                         </div>
@@ -48,7 +48,7 @@
                                     $rsl = query($sql);
                                     $row = mysqli_fetch_array($rsl);
                                     ?>
-                                    <p><span id="bio"><?php echo $row['count'] ?></span> Downloads</p>
+                                    <p><span id="bio"><?php echo number_format($row['count']) ?></span> Downloads</p>
                                 </div>
                             </a>
                         </div>
@@ -66,7 +66,7 @@
                                     $rsl = query($sql);
                                     $row = mysqli_fetch_array($rsl);
                                     ?>
-                                    <p><span id="chm"><?php echo $row['count'] ?></span> Downloads</p>
+                                    <p><span id="chm"><?php echo number_format($row['count']) ?></span> Downloads</p>
                                 </div>
                             </a>
                         </div>
@@ -85,7 +85,7 @@
                                     $rsl = query($sql);
                                     $row = mysqli_fetch_array($rsl);
                                     ?>
-                                    <p><span id="com"><?php echo $row['count'] ?></span> Downloads</p>
+                                    <p><span id="com"><?php echo number_format($row['count']) ?></span> Downloads</p>
                                 </div>
                             </a>
                         </div>
@@ -102,7 +102,7 @@
                                     $rsl = query($sql);
                                     $row = mysqli_fetch_array($rsl);
                                     ?>
-                                    <p><span id="ck"><?php echo $row['count'] ?></span> Downloads</p>
+                                    <p><span id="ck"><?php echo number_format($row['count']) ?></span> Downloads</p>
                                 </div>
                             </a>
                         </div>
@@ -120,7 +120,7 @@
                                     $rsl = query($sql);
                                     $row = mysqli_fetch_array($rsl);
                                     ?>
-                                    <p><span id="eco"><?php echo $row['count'] ?></span> Downloads</p>
+                                    <p><span id="eco"><?php echo number_format($row['count']) ?></span> Downloads</p>
                                 </div>
                             </a>
                         </div>
@@ -138,7 +138,7 @@
                                     $rsl = query($sql);
                                     $row = mysqli_fetch_array($rsl);
                                     ?>
-                                    <p><span id="lit"><?php echo $row['count'] ?></span> Downloads</p>
+                                    <p><span id="lit"><?php echo number_format($row['count']) ?></span> Downloads</p>
                                 </div>
                             </a>
                         </div>
@@ -156,7 +156,7 @@
                                     $rsl = query($sql);
                                     $row = mysqli_fetch_array($rsl);
                                     ?>
-                                    <p><span id="mat"><?php echo $row['count'] ?></span> Downloads</p>
+                                    <p><span id="mat"><?php echo number_format($row['count']) ?></span> Downloads</p>
                                 </div>
                             </a>
                         </div>
@@ -173,7 +173,7 @@
                                     $rsl = query($sql);
                                     $row = mysqli_fetch_array($rsl);
                                     ?>
-                                    <p><span id="ph"><?php echo $row['count'] ?></span> Downloads</p>
+                                    <p><span id="ph"><?php echo number_format($row['count']) ?></span> Downloads</p>
                                 </div>
                             </a>
                         </div>
@@ -193,7 +193,7 @@
                                     $rsl = query($sql);
                                     $row = mysqli_fetch_array($rsl);
                                     ?>
-                                    <p><span id="uo"><?php echo $row['count'] ?></span> Downloads</p>
+                                    <p><span id="uo"><?php echo number_format($row['count']) ?></span> Downloads</p>
                                 </div>
                             </a>
                         </div>
@@ -211,7 +211,7 @@
                                     $rsl = query($sql);
                                     $row = mysqli_fetch_array($rsl);
                                     ?>
-                                    <p><span id="life"><?php echo $row['count'] ?></span> Downloads</p>
+                                    <p><span id="life"><?php echo number_format($row['count']) ?></span> Downloads</p>
                                 </div>
                             </a>
                         </div>
@@ -243,7 +243,7 @@
                                     $rsl = query($sql);
                                     $row = mysqli_fetch_array($rsl);
                                     ?>
-                                    <p><span id="nud"><?php echo $row['count'] ?></span> Downloads</p>
+                                    <p><span id="nud"><?php echo number_format($row['count']) ?></span> Downloads</p>
                                 </div>
                             </a>
                         </div>
@@ -260,7 +260,7 @@
                                     $rsl = query($sql);
                                     $row = mysqli_fetch_array($rsl);
                                     ?>
-                                    <p><span id="jk"><?php echo $row['count'] ?></span> Downloads</p>
+                                    <p><span id="jk"><?php echo number_format($row['count']) ?></span> Downloads</p>
                                 </div>
                             </a>
                         </div>
@@ -277,7 +277,7 @@
                                     $rsl = query($sql);
                                     $row = mysqli_fetch_array($rsl);
                                     ?>
-                                    <p><span id="m1"><?php echo $row['count'] ?></span> Downloads</p>
+                                    <p><span id="m1"><?php echo number_format($row['count']) ?></span> Downloads</p>
                                 </div>
                             </a>
                         </div>
@@ -299,7 +299,7 @@
                                     $rsl = query($sql);
                                     $row = mysqli_fetch_array($rsl);
                                     ?>
-                                    <p><span id="m2"><?php echo $row['count'] ?></span> Downloads</p>
+                                    <p><span id="m2"><?php echo number_format($row['count']) ?></span> Downloads</p>
                                 </div>
                             </a>
                         </div>
