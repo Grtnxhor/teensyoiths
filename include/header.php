@@ -113,7 +113,7 @@ while($row = mysqli_fetch_array($res)) {
                                 <li><a href="./about">About Us</a></li>
                                 <li><a href="./articles">Articles</a></li>
                                 <li><a href="dashboard/./write">Write an Article</a></li>
-                                <li><a href="dashboard/./write">Past Winners</a></li>
+                                <li><a href="./winners">Past Winners</a></li>
                                 <li><a href="./freebies">Freebies</a></li>
                                 <li><a href="./faqs">FAQs</a></li>
                                 <?php

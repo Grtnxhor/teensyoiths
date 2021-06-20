@@ -153,9 +153,8 @@
             <div class="col-md-8">
                 <div class="blog-entry">
                     <div class="blog-img">
-                        <a href="<?php echo $row['post_url']; ?>"><img
-                                style="width: 700px; max-height: 400px; min-height: 500px;" src="<?php echo $b; ?>"
-                                class="img-responsive" alt="<?php echo $row['author']; ?>"></a>
+                        <a href="<?php echo $row['post_url']; ?>"><img src="<?php echo $b; ?>" class="img-responsive"
+                                style="width: 400px; height: 400px;" alt="<?php echo $row['author']; ?>"></a>
                     </div>
                     <div class="desc">
 
@@ -268,7 +267,7 @@
         <h2><b>Suggested Articles</b></h2>
         <div class="row row-pb-md">
             <?php
-                $sql = "SELECT * FROM article ORDER BY RAND() LIMIT 1";
+                $sql = "SELECT * FROM article WHERE view BETWEEN 5 AND 1000000000000000  ORDER BY RAND() LIMIT 3";
                 $res = query($sql);
                 if (row_count($res) == "") {
                      echo '<a href="dashboard/./write"><h4 style="color: red;">&nbsp;&nbsp;&nbsp;Write an Article</h4></a>';
@@ -284,7 +283,7 @@
                   } 
 
                   if($row['propix'] == '') {
-
+                  	
                   	$b = "images/2.png";
 
                   } else {
@@ -293,11 +292,10 @@
                   	$b = 'artfile/dp/'.$row['propix'];
 
                   }
-                  
-                    $det = strip_tags($row['details']);
+
+                   $det = strip_tags($row['details']);
                     $frv = wordwrap($det, 35, "<br>\n", TRUE); 
                     $y = substr($frv, 0, 100).'... ';
-
                 ?>
             <div class="col-md-4">
                 <div class="blog-entry">
@@ -314,36 +312,23 @@
                                         <?php echo number_format($row['totview']); ?> | Monthly
                                         View : <?php echo number_format($row['view']); ?> </b></a></span>
                         </p>
-                        <p><?php echo $y; ?> ...</p>
-                        </p>
+
+                        <p><?php echo $y; ?></p>
+                        <br />
                         <span class="pos"> By <a
                                 href="<?php echo $row['post_url']; ?>"><?php echo $row['author']; ?></a></span>
                         <br /><br />
                         <div><a href="<?php echo $row['post_url']; ?>"><button class="btn btn-primary">Read
-                                    More</button></a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-8">
-                <h2><b>Suggested Author</b></h2>
-                <div class="blog-entry">
-                    <div class="blog-img">
-                        <a href="<?php echo $row['post_url']; ?>"><img src="<?php echo $b; ?>" class="img-responsive"
-                                style="width: 700px; max-height: 700px; min-height: 500px;"
-                                alt="<?php echo $row['author']; ?>"></a>
-                    </div>
-                    <div class="desc">
-                        <h2><a href="<?php echo $row['post_url']; ?>"><?php echo $row['author']; ?></a></h2>
-                        <p>Author Mail: <b><?php echo $row['author_mail']; ?></b> </p>
+                                    Now</button></a></div>
                     </div>
                 </div>
             </div>
             <?php
-				}
-			}
-			?>
-
-
+           }
+       }
+      
+               
+                ?>
         </div>
 
     </div>

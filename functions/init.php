@@ -29,8 +29,7 @@ while($row = mysqli_fetch_array($res)) {
 
     //if true, update monthly and annual view, and update the next last day
     $ssl = "UPDATE article SET `view` = '0', `totview` = '$tot', `lastdate` = '$tot'";
-    $r   = query($ssl);
-           
+    $r   = query($ssl);      
     }
 } //else do nothing
 }

@@ -372,7 +372,7 @@ if (isset($_POST['fgtemail'])) {
 
     $subject = "Forgot Password";
 
-    $logo = 'https://teensyouths.com.ng/img/2.png';
+    $logo = 'https://teensyouths.com.ng/images/2.png';
     $url  = 'https://teensyouths.com.ng';
     $link = 'https://teensyouths.com.ng/./recovery?id='.$activate;
 
@@ -514,7 +514,7 @@ if (!empty($_FILES["file"]["name"])) {
 }
 
 
-///sql update product image
+//sql update product image
 function img_prod($target_file) {
 
 	$proid    = $_SESSION['user'];
@@ -531,8 +531,8 @@ function img_prod($target_file) {
 //post article first step
 if(isset($_POST['ptit']) && isset($_POST['pdet'])) {
 
-	$title 		= $_POST['ptit'];
-	$details    = $_POST['pdet'];  
+	$title 		= escape($_POST['ptit']);
+	$details    = escape($_POST['pdet']);  
 
 
 	//echo $details;
@@ -1051,5 +1051,38 @@ if(isset($_POST['mb2'])) {
 
 	echo $b;
 	
+}
+
+
+//winners function
+function winners() {
+
+//get the last day in a month
+$wa_date = date("M d, Y");
+$wtot = date("M t, Y", strtotime($wa_date));
+
+//get 3 winners
+$wnnr = "SELECT * FROM article ORDER BY view desc LIMIT 3";
+$wnsl = query($wnnr);
+if(row_count($wnsl) != '') {
+while($wrw = mysqli_fetch_array($wnsl)) {
+    
+    //get the last day here
+    $wbs = date('M d, Y', strtotime($row['lastdate']));
+
+    //on load, check if the present date is greater than the last day gotten
+    if ($wa_date >= $wbs) {	
+
+	//get 3 authors
+	$auth = $row['author'];
+	$pix  = $row[''];
+
+	//insert winners
+	$wsl = "INSERT INTO winners(`date`, `winner`, `pix`)";
+    $wql.= "VALUES('$abs', '$auth', '')";
+    $wrs = query($wql);
+    }		
+	}
+} //else do nothing
 }
 ?>

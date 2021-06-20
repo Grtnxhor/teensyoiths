@@ -124,7 +124,7 @@ if (!isset($_GET['read'])) {
                     <div class="col-md-12">
                         <div class="blog-entry">
                             <div class="blog-img blog-detail">
-                                <img style="width: 800px; height: 400px;" src="<?php echo $a ?>" class="img-responsive"
+                                <img style="width: 800px; height: 800px;" src="<?php echo $a ?>" class="img-responsive"
                                     alt="<?php echo $row['title'] ?>">
                             </div>
 
