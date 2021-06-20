@@ -1,6 +1,6 @@
 ErrorDocument 404 /./opps
-ErrorDocument 500 /./opps
-ErrorDocument 509 /./opps
+ErrorDocument 500 /./all
+ErrorDocument 509 /./all
 
 RewriteEngine on 
 RewriteCond %{REQUEST_FILENAME} !-d
