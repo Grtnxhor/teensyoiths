@@ -13,11 +13,17 @@
 <div id="colorlib-container">
     <div class="container">
         <div class="row">
+          <?php
+                $ql = "SELECT * FROM winners GROUP BY `date`";
+                $es = query($ql);
+                while($rew = mysqli_fetch_array($es)) {
+                $trd = ; 
+                ?>
             <div class="col-md-12 content">
-
+              <h2><b>Best-Read Author <i class="icon-star"></i></b></h2>
                 <div class="row row-pb-md">
                     <?php
-                $sql = "SELECT * FROM winners ORDER BY id desc";
+                $sql = "SELECT * FROM winners WHERE `date` = '' ORDER BY id asc";
                 $res = query($sql);
                 if (row_count($res) == "") {
                     echo '<a href="dashboard/./write"><h4 style="color: red;">&nbsp;&nbsp;&nbsp;No Winners yet!</h4></a>';
@@ -46,30 +52,18 @@
                    
                     
                 ?>
+                
+                  
                     <div class="col-md-4">
                         <div class="blog-entry">
                             <div class="blog-img">
                                 <a href="<?php echo $row['post_url']; ?>"><img src="<?php echo $a; ?>"
                                         class="img-responsive" style="width: 400px; height: 300px;"
-                                        alt="<?php echo $row['title']; ?>"></a>
+                                        alt="<?php echo $row['winner']; ?>"></a>
                             </div>
                             <div class="desc">
 
-                                <h2><a href="<?php echo $row['post_url']; ?>"><?php echo $row['title']; ?></a></h2>
-                                <p class="meta">
-                                    <span style="text-transform: capitalize"><a href="<?php echo $row['post_url']; ?>">
-                                            <b>All
-                                                Time View:
-                                                <?php echo number_format($row['totview']); ?> | Monthly
-                                                View : <?php echo number_format($row['view']); ?> </b></a></span>
-                                </p>
-                                <br />
-                                <span class="pos"> By <a
-                                        href="<?php echo $row['post_url']; ?>"><?php echo $row['author']; ?></a></span>
-                                <br /><br />
-                                <div><a href="<?php echo $row['post_url']; ?>"><button class="btn btn-primary">Read
-                                            Article</button></a></div>
-                                <br />
+                                <h2><a href="<?php echo $row['post_url']; ?>"><?php echo $row['winner']; ?></a></h2>
                             </div>
                         </div>
                     </div>
@@ -81,6 +75,9 @@
                 </div>
 
             </div>
+            <?php
+          }
+          ?>
         </div>
     </div>
 </div>
