@@ -17,13 +17,13 @@
                 $ql = "SELECT * FROM winners GROUP BY `date`";
                 $es = query($ql);
                 while($rew = mysqli_fetch_array($es)) {
-                $trd = ; 
+                $trd = $rew['date']; 
                 ?>
             <div class="col-md-12 content">
-              <h2><b>Best-Read Author <i class="icon-star"></i></b></h2>
+              <h2><b><?php echo date('F, Y', strtotime($rew['date'])) ?></b></h2>
                 <div class="row row-pb-md">
                     <?php
-                $sql = "SELECT * FROM winners WHERE `date` = '' ORDER BY id asc";
+                $sql = "SELECT * FROM winners WHERE `date` = '$trd' ORDER BY id asc";
                 $res = query($sql);
                 if (row_count($res) == "") {
                     echo '<a href="dashboard/./write"><h4 style="color: red;">&nbsp;&nbsp;&nbsp;No Winners yet!</h4></a>';
