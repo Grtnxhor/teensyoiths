@@ -80,44 +80,44 @@ $tot = date("M t, Y", strtotime($a_date));
 
             <!-- /.row -->
             <!-- Main row -->
-               <!-- Main content -->
-    <div class="content">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-             <div class="card">
-              <div class="card-header">
-                <h5 class="card-title m-0">  <b>Write a New Article </b></h5>
-              </div>
-              <div class="card-body">
+            <!-- Main content -->
+            <div class="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title m-0"> <b>Write a New Article </b></h5>
+                                </div>
+                                <div class="card-body">
 
-              
-                <a href="./write" class="btn btn-primary">Begin Writing</a>
-              </div>
-            </div>
 
-           
-          </div>
-          <!-- /.col-md-6 -->
-          <div class="col-lg-6">
-           
-            <div class="card card-primary card-outline">
-              <div class="card-header">
-                <h5 class="card-title m-0"><b>My Articles </b></h5>
-              </div>
-              <div class="card-body">
-                <a href="./article" class="btn btn-primary">View Your Articles</a>
-              </div>
+                                    <a href="./write" class="btn btn-primary">Begin Writing</a>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!-- /.col-md-6 -->
+                        <div class="col-lg-6">
+
+                            <div class="card card-primary card-outline">
+                                <div class="card-header">
+                                    <h5 class="card-title m-0"><b>My Articles </b></h5>
+                                </div>
+                                <div class="card-body">
+                                    <a href="./article" class="btn btn-primary">View Your Articles</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.col-md-6 -->
+                    </div>
+                    <!-- /.row -->
+                </div><!-- /.container-fluid -->
             </div>
-          </div>
-          <!-- /.col-md-6 -->
+            <!-- /.content -->
         </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+        <!-- /.content-wrapper -->
 
     </section>
     <!-- /.content -->
@@ -144,8 +144,8 @@ $tot = date("M t, Y", strtotime($a_date));
 <!-- overlayScrollbars -->
 <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <script type="text/javascript">
-$(document).ready(function () {
-  bsCustomFileInput.init();
+$(document).ready(function() {
+    bsCustomFileInput.init();
 });
 </script>
 
