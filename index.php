@@ -267,7 +267,7 @@
         <h2><b>Suggested Articles</b></h2>
         <div class="row row-pb-md">
             <?php
-                $sql = "SELECT * FROM article WHERE view BETWEEN 5 AND 1000000000000000  ORDER BY RAND() LIMIT 3";
+                $sql = "SELECT * FROM article WHERE totview BETWEEN 5 AND 1000000000000000  ORDER BY RAND() LIMIT 3";
                 $res = query($sql);
                 if (row_count($res) == "") {
                      echo '<a href="dashboard/./write"><h4 style="color: red;">&nbsp;&nbsp;&nbsp;Write an Article</h4></a>';
