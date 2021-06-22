@@ -61,7 +61,7 @@ $row = mysqli_fetch_array($res);
                          <tr>
                              <?php
 $author = $_SESSION['Username'];             
- $sql="SELECT * from `article` WHERE `author` = '$author' ORDER BY 'id' desc";
+ $sql="SELECT * from `article` ORDER BY 'id' desc WHERE `author` = '$author'";
  $result_set = query($sql);
  while($row = mysqli_fetch_array($result_set))
  {
