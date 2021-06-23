@@ -93,6 +93,10 @@ while($row = mysqli_fetch_array($res)) {
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
+    <!-- adsense --->
+    <script data-ad-client="ca-pub-8978686164104279" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
 </head>
 
 <body>
