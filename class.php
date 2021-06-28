@@ -22,7 +22,7 @@ $rdf = mysqli_fetch_array($rsl);
 <?php include("include/footer.php"); ?>
 </div>
 
-<div class="gototop js-top">
+<div class=" gototop js-top">
     <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
 </div>
 
