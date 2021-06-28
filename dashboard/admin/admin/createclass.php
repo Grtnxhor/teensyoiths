@@ -44,7 +44,7 @@ $rdf = mysqli_fetch_array($rsl);
                                     <div class="col-sm-12">
                                         <!-- text input -->
                                         <div class="form-group">
-                                            <label>Class Link</label>
+                                            <label>Previous Class Link.: <?php echo $rdf['gform']; ?></label>
                                             <input type="text" id="lnkln" class="form-control"
                                                 placeholder="previous class link: <?php echo $rdf['gform']; ?>">
                                         </div>

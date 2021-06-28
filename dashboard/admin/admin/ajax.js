@@ -59,7 +59,7 @@ $("#crepart").click(function()
 (
 {
 	type 		:  'post',
-	url			:  '../functions/init.php',
+	url			:  'functions/init.php',
 	data 		:  {linkln:linkln},
 	success 	:  function(data)
 	{
