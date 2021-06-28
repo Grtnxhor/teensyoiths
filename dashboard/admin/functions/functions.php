@@ -474,4 +474,18 @@ if (isset($_POST['password'])) {
 	echo "Wrongly typed password";
 }
 }
+
+
+//-- create class link --//
+if(isset($_POST['linkln'])) {
+
+	$lnk = $_POST['linkln'];
+
+	$sql = "UPDATE `admin` SET `gform` = '$lnk'";
+	$rsl = query($sql);
+
+	$_SESSION['class'] = $lnk;
+
+	echo '<script>window.location.href ="./createclass"</script>';
+}
 ?>
