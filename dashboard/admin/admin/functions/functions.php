@@ -698,7 +698,7 @@ if (isset($_POST['delsn'])) {
 	    
 	  } else {
 
-	  	$sml = "DELETE FROM article WHERE `author` = '$author' AND `post_url` = '$pid'";
+	  	$sml = "DELETE FROM article WHERE `post_url` = '$pid'";
 	  	$rml = query($sml);
 
 	  	echo "Article Deleted Successfully";
