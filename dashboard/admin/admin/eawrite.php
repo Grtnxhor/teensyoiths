@@ -1,5 +1,20 @@
 <?php
-include("functions/top.php"); ?>
+include("functions/top.php");
+if (isset($_GET['id'])) {
+
+  $data = $_GET['id'];
+
+  $author = $_SESSION['Username'];
+
+  $ssl = "SELECT * FROM article WHERE `post_url` = '$data'";
+  $ghl = query($ssl);
+  $row = mysqli_fetch_array($ghl);
+
+}else {
+  redirect("./article");
+ 
+}
+ ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -39,10 +54,13 @@ include("functions/top.php"); ?>
                                         <!-- text input -->
                                         <div class="form-group">
                                             <label>Article Title</label>
-                                            <input type="text" id="ptit" class="form-control"
+                                            <input type="text" id="svptit" class="form-control"
+                                                value="<?php echo $row['title'] ?>"
                                                 placeholder="Enter your article title">
                                         </div>
                                     </div>
+
+                                    <input type="text" value="<?php echo $data ?>" id="datat" hidden>
 
                                 </div>
                                 <div class="row">
@@ -50,16 +68,16 @@ include("functions/top.php"); ?>
                                         <!-- textarea -->
                                         <div class="form-group">
                                             <label>Article Details</label>
-                                            <textarea style="white-space: pre-wrap;" class="textarea" id="pdet"
+                                            <textarea style="white-space: pre-wrap;" class="textarea" id="svpdet"
                                                 data-parsley-pattern="/<\s*((p|span|ul|li|i|u|b)1?)[>]*\s*>/"
                                                 placeholder="Place some text here"
-                                                style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                                                style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"><?php echo $row['details'] ?></textarea>
                                         </div>
                                     </div>
 
                                 </div>
 
-                                <button id="part" type="button" class="btn btn-primary">Upload Article Image</button>
+                                <button id="svpart" type="button" class="btn btn-primary">Save Changes</button>
 
                             </form>
                         </div>
@@ -118,7 +136,7 @@ $(function() {
     });
 })
 </script>
-<script src="../ajax.js"></script>
+<script src="ajax.js"></script>
 </body>
 
 </html>

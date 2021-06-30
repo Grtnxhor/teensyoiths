@@ -1,5 +1,8 @@
 <?php
-include("functions/top.php"); ?>
+include("functions/top.php");
+
+
+ ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -7,12 +10,12 @@ include("functions/top.php"); ?>
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Write an Article</h1>
+                    <h1>Uploaded</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="./">Dashboard</a></li>
-                        <li class="breadcrumb-item active">Write Article</li>
+                        <li class="breadcrumb-item active">Uploaded</li>
                     </ol>
                 </div>
             </div>
@@ -29,7 +32,7 @@ include("functions/top.php"); ?>
                     <!-- general form elements disabled -->
                     <div class="card card-warning">
                         <div class="card-header">
-                            <h3 class="card-title">All fields are compulsory</h3>
+                            <h3 class="card-title"></h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -37,29 +40,15 @@ include("functions/top.php"); ?>
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <!-- text input -->
-                                        <div class="form-group">
-                                            <label>Article Title</label>
-                                            <input type="text" id="ptit" class="form-control"
-                                                placeholder="Enter your article title">
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <!-- textarea -->
-                                        <div class="form-group">
-                                            <label>Article Details</label>
-                                            <textarea style="white-space: pre-wrap;" class="textarea" id="pdet"
-                                                data-parsley-pattern="/<\s*((p|span|ul|li|i|u|b)1?)[>]*\s*>/"
-                                                placeholder="Place some text here"
-                                                style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-                                        </div>
+                                        <h3>Your article was uploaded successfully</h3>
+                                        <a target="_blank"
+                                            href="https://teensyouths.com.ng/<?php echo $_SESSION['prl']; ?>"
+                                            class="btn btn-primary">Preview
+                                            Article</a>
                                     </div>
 
                                 </div>
 
-                                <button id="part" type="button" class="btn btn-primary">Upload Article Image</button>
 
                             </form>
                         </div>
@@ -106,19 +95,16 @@ include("functions/top.php"); ?>
 <script src="dist/js/demo.js"></script>
 <!-- Summernote -->
 <script src="plugins/summernote/summernote-bs4.min.js"></script>
-<script>
-$(function() {
-    // Summernote
-    $('.textarea').summernote({
-
-        toolbar: [
-            // [groupName, [list of button]]
-            ['style', ['bold', 'italic']]
-        ]
-    });
-})
-</script>
+<!-- overlayScrollbars -->
+<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <script src="../ajax.js"></script>
+<!-- bs-custom-file-input -->
+<script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    bsCustomFileInput.init();
+});
+</script>
 </body>
 
 </html>

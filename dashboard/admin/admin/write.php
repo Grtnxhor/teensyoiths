@@ -118,7 +118,7 @@ $(function() {
     });
 })
 </script>
-<script src="../ajax.js"></script>
+<script src="ajax.js"></script>
 </body>
 
 </html>

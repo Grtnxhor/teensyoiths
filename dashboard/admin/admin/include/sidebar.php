@@ -94,13 +94,27 @@
                         </li>
                         <br />
                         <li class="nav-item has-treeview">
-                            <a href="./article" class="nav-link">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-list"></i>
                                 <p>
                                     Articles
                                     <i class="fas fa-angle-right right"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="./write" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Write an Article</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="./article" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>All Articles</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <br />
                         <li class="nav-item has-treeview">
@@ -132,7 +146,7 @@
                                 <i class="nav-icon far fa-edit"></i>
                                 <p>
                                     Create Class
-
+                                    <i class="right fas fa-angle-right"></i>
                                 </p>
                             </a>
                         </li>

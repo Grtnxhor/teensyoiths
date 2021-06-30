@@ -1,5 +1,8 @@
 <?php
-include("functions/top.php"); ?>
+include("functions/top.php");
+
+
+ ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -7,12 +10,12 @@ include("functions/top.php"); ?>
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Write an Article</h1>
+                    <h1>Upload Article File</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="./">Dashboard</a></li>
-                        <li class="breadcrumb-item active">Write Article</li>
+                        <li class="breadcrumb-item active">Upload Article Picture</li>
                     </ol>
                 </div>
             </div>
@@ -38,28 +41,23 @@ include("functions/top.php"); ?>
                                     <div class="col-sm-12">
                                         <!-- text input -->
                                         <div class="form-group">
-                                            <label>Article Title</label>
-                                            <input type="text" id="ptit" class="form-control"
-                                                placeholder="Enter your article title">
+                                            <label>Upload Article Picture</label>
+                                            <div class="card-body">
+
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="psfile">
+                                                    <label class="custom-file-label" for="customFile">Choose
+                                                        file</label>
+                                                </div>
+                                                <br /><br />
+                                                <button type="button" id="pstupl"
+                                                    class="btn btn-primary">Upload</button>
+                                            </div>
                                         </div>
                                     </div>
 
                                 </div>
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <!-- textarea -->
-                                        <div class="form-group">
-                                            <label>Article Details</label>
-                                            <textarea style="white-space: pre-wrap;" class="textarea" id="pdet"
-                                                data-parsley-pattern="/<\s*((p|span|ul|li|i|u|b)1?)[>]*\s*>/"
-                                                placeholder="Place some text here"
-                                                style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-                                        </div>
-                                    </div>
 
-                                </div>
-
-                                <button id="part" type="button" class="btn btn-primary">Upload Article Image</button>
 
                             </form>
                         </div>
@@ -110,15 +108,24 @@ include("functions/top.php"); ?>
 $(function() {
     // Summernote
     $('.textarea').summernote({
-
         toolbar: [
             // [groupName, [list of button]]
-            ['style', ['bold', 'italic']]
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['fontname', ['fontname']],
+            ['fontsize', ['fontsize']]
         ]
     });
 })
 </script>
-<script src="../ajax.js"></script>
+<script src="ajax.js"></script>
+<!-- bs-custom-file-input -->
+<script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    bsCustomFileInput.init();
+});
+</script>
 </body>
 
 </html>
