@@ -41,34 +41,32 @@ $rdf = mysqli_fetch_array($rsl);
                         <div class="card-body">
                             <form role="form">
                                 <div class="row">
-                                    <div class="col-sm-12">
-                                        <!-- text input -->
-                                        <div class="form-group">
-                                            <label>Previous Class Title.: <i><?php echo $rdf['watext']; ?></i></label>
-                                            <input type="text" id="watext" class="form-control"
-                                                placeholder="previous class link: <?php echo $rdf['watext']; ?>">
-                                        </div>
-                                    </div>
-
 
                                     <div class="col-sm-12">
                                         <!-- text input -->
                                         <div class="form-group">
-                                            <label>Previous Class Link.: <i><?php echo $rdf['gform']; ?></i></label>
+                                            <label>Create a Class Link.:</label>
                                             <input type="text" id="lnkln" class="form-control"
                                                 placeholder="previous class link: <?php echo $rdf['gform']; ?>">
                                         </div>
                                     </div>
 
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-6">
                                         <!-- text input -->
                                         <div class="form-group">
-                                            <label>Previous WhatsApp Link.: <i><?php echo $rdf['walink']; ?></i></label>
+                                            <label>Creat a WhatsApp Class Link.:</label>
                                             <input type="text" id="walink" class="form-control"
                                                 placeholder="previous class link: <?php echo $rdf['walink']; ?>">
                                         </div>
                                     </div>
-
+                                    <div class="col-sm-6">
+                                        <!-- text input -->
+                                        <div class="form-group">
+                                            <label>Create a WhatsApp Class Title .:</label>
+                                            <input type="text" id="watext" class="form-control"
+                                                placeholder="previous class link: <?php echo $rdf['watext']; ?>">
+                                        </div>
+                                    </div>
 
                                 </div>
 
@@ -148,11 +146,11 @@ $(function() {
 <script src="ajax.js"></script>
 
 <?php
-if(isset($_SESSION['class'])) {
-    echo "
-    $(toastr.error('link updated successfully'));
-    ";
-}
+if (isset($_SESSION['class'])) {
+ 
+ echo "<script>$(toastr.success('Class link created and updated successfully'));</script>";
+ }
+ unset($_SESSION['class']);
 ?>
 </body>
 

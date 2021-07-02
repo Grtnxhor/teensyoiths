@@ -488,7 +488,7 @@ if(isset($_POST['linkln']) && isset($_POST['walink']) && isset($_POST['watext'])
 
 	$_SESSION['class'] = $lnk;
 
-	//echo '<script>window.location.href ="./createclass"</script>';
+	echo '<script>window.location.href ="./createclass"</script>';
 }
 
 
