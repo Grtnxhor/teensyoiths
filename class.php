@@ -16,10 +16,10 @@ $rdf = mysqli_fetch_array($rsl);
         <!--<h2><b></b></h2>-->
         <iframe src="<?php echo $rdf['gform'] ?>" style="height:100vh;width:100%;border: none;"></iframe>
         <a href="<?php echo $rdf['walink'] ?>" style="text-decoration: none;" target="_blank">
+
             <img src="https://i.ibb.co/N9P0K9H/239px-Whats-App-svg.png" width="50" height="50" />
             <?php echo $rdf['watext']?>
         </a>
-
     </div>
 </div>
 
