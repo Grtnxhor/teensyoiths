@@ -477,16 +477,18 @@ if (isset($_POST['password'])) {
 
 
 //-- create class link --//
-if(isset($_POST['linkln'])) {
+if(isset($_POST['linkln']) && isset($_POST['walink']) && isset($_POST['watext'])) {
 
 	$lnk = $_POST['linkln'];
+	$wal = $_POST['walink'];
+	$wat = $_POST['watext'];
 
-	$sql = "UPDATE `admin` SET `gform` = '$lnk'";
+	$sql = "UPDATE `admin` SET `gform` = '$lnk', `walink` = '$wal', `watext` = '$wat'";
 	$rsl = query($sql);
 
 	$_SESSION['class'] = $lnk;
 
-	echo '<script>window.location.href ="./createclass"</script>';
+	//echo '<script>window.location.href ="./createclass"</script>';
 }
 
 

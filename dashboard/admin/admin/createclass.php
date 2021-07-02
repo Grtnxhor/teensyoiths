@@ -44,11 +44,31 @@ $rdf = mysqli_fetch_array($rsl);
                                     <div class="col-sm-12">
                                         <!-- text input -->
                                         <div class="form-group">
-                                            <label>Previous Class Link.: <i><?php echo $rdf['gform']; ?></i> q</label>
+                                            <label>Previous Class Title.: <i><?php echo $rdf['watext']; ?></i></label>
+                                            <input type="text" id="watext" class="form-control"
+                                                placeholder="previous class link: <?php echo $rdf['watext']; ?>">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-sm-12">
+                                        <!-- text input -->
+                                        <div class="form-group">
+                                            <label>Previous Class Link.: <i><?php echo $rdf['gform']; ?></i></label>
                                             <input type="text" id="lnkln" class="form-control"
                                                 placeholder="previous class link: <?php echo $rdf['gform']; ?>">
                                         </div>
                                     </div>
+
+                                    <div class="col-sm-12">
+                                        <!-- text input -->
+                                        <div class="form-group">
+                                            <label>Previous WhatsApp Link.: <i><?php echo $rdf['walink']; ?></i></label>
+                                            <input type="text" id="walink" class="form-control"
+                                                placeholder="previous class link: <?php echo $rdf['walink']; ?>">
+                                        </div>
+                                    </div>
+
 
                                 </div>
 

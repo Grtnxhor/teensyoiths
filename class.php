@@ -14,17 +14,12 @@ $rdf = mysqli_fetch_array($rsl);
 <div id="colorlib-container">
     <div class="container">
         <!--<h2><b></b></h2>-->
-        <iframe src="https://api.whatsapp.com/send?phone=19174750450&text=Hello"
-            style="height:100vh;width:100%;border: none;" title="Iframe Example"></iframe>
-        <a href="https://wa.me/!!!yourNumberWithCountryCodeHere!!!?text=Hi%20Eric,%20I%20am%20sending%20you%20this%20message%20because%20I%20am%20interested%20in%20your%20business!"
-            style="text-decoration: none;" target="_blank">
+        <iframe src="<?php echo $rdf['gform'] ?>" style="height:100vh;width:100%;border: none;"></iframe>
+        <a href="<?php echo $rdf['walink'] ?>" style="text-decoration: none;" target="_blank">
             <img src="https://i.ibb.co/N9P0K9H/239px-Whats-App-svg.png" width="50" height="50" />
+            <?php echo $rdf['watext']?>
         </a>
 
-        <a href="https://wa.me/!!!yourNumberWithCountryCodeHere!!!?text=Hi%20Eric,%20I%20am%20sending%20you%20this%20message%20because%20I%20am%20interested%20in%20your%20business!"
-            target="_blank">
-            Send Message
-        </a>
     </div>
 </div>
 

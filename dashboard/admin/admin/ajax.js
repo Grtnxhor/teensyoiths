@@ -45,6 +45,8 @@ $("#crepart").click(function()
 	$("#ModalCenter").modal("show");
 
 	var linkln 	 = $("#lnkln").val();
+	var walink 	 = $("#walink").val();
+	var watext 	 = $("#watext").val();
 
 	if(linkln == null || linkln == '') {
 
@@ -60,7 +62,7 @@ $("#crepart").click(function()
 {
 	type 		:  'post',
 	url			:  'functions/init.php',
-	data 		:  {linkln:linkln},
+	data 		:  {linkln:linkln,walink:walink,watext:watext},
 	success 	:  function(data)
 	{
 		$(toastr.error(data)).html(data);
