@@ -16,12 +16,12 @@ $rdf = mysqli_fetch_array($rsl);
         <!--<h2><b></b></h2>-->
         <iframe src="<?php echo $rdf['gform'] ?>"
             style="height:100vh;width:100%;border: none;"></iframe>
-        <!--<a href="https://wa.me/!!!yourNumberWithCountryCodeHere!!!?text=Hi%20Eric,%20I%20am%20sending%20you%20this%20message%20because%20I%20am%20interested%20in%20your%20business!"
+        <a href="https://chat.whatsapp.com/JaRuG47Nk2i2v80K1FlTVW&sa=D&source=editors&ust=1625217591942000&usg=AFQjCNFswA24m5HJy6ImzXKHwGO9AyhUzA"
             style="text-decoration: none;" target="_blank">
             <img src="https://i.ibb.co/N9P0K9H/239px-Whats-App-svg.png" width="50" height="50" />
         </a>
 
-        <a href="https://wa.me/!!!yourNumberWithCountryCodeHere!!!?text=Hi%20Eric,%20I%20am%20sending%20you%20this%20message%20because%20I%20am%20interested%20in%20your%20business!"
+        <!--<a href="https://wa.me/!!!yourNumberWithCountryCodeHere!!!?text=Hi%20Eric,%20I%20am%20sending%20you%20this%20message%20because%20I%20am%20interested%20in%20your%20business!"
             target="_blank">
             Send Message
         </a>-->
